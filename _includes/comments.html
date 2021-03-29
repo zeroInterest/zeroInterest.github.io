@@ -8,26 +8,4 @@
         theme="github-light"
         crossorigin="anonymous"
         async>
-        
-        
-   const initTheme2 = (state) => {
-      if (state === "dark") {
-        const message = {
-          type: 'set-theme',
-          theme: 'github-dark'
-        };
-        var utterances = document.querySelector('iframe');
-        utterances.contentWindow.postMessage(message, 'https://utteranc.es');
-      } else if (state === "light") {
-        const message = {
-          type: 'set-theme',
-          theme: 'github-light'
-        };
-        var utterances = document.querySelector('iframe');
-        utterances.contentWindow.postMessage(message, 'https://utteranc.es');
-      } 
-    };
- 
- 
-    initTheme2(localStorage.getItem("theme"));
 </script>
