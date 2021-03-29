@@ -16,14 +16,8 @@ layout: compress
     const initTheme = (state) => {
       if (state === "dark") {
         body.setAttribute("data-theme", "dark");
-        if(document.querySelectorAll("link[href ='/stylesheets/themes/github-light/utterances.css']").length > 0){
-           document.querySelectorAll("link[href ='/stylesheets/themes/github-light/utterances.css']")[0].setAttribute("href", '/stylesheets/themes/github-dark/utterances.css');
-         }
       } else if (state === "light") {
         body.removeAttribute("data-theme");
-        if(document.querySelectorAll("link[href ='/stylesheets/themes/github-dark/utterances.css']").length > 0){
-           document.querySelectorAll("link[href ='/stylesheets/themes/github-dark/utterances.css']")[0].setAttribute("href", '/stylesheets/themes/github-light/utterances.css');
-         }
       } else {
         localStorage.setItem("theme", data);
       }
