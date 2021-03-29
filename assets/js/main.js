@@ -7,7 +7,7 @@
      if (state === "dark") {
       localStorage.setItem("theme", "light");
       body.removeAttribute("data-theme");
-      if(document.querySelector('iframe').length > 0){
+      if(!document.querySelector('iframe') === null){
         const message = {
           type: 'set-theme',
           theme: 'github-light'
@@ -18,7 +18,7 @@
     } else if (state === "light") {
       localStorage.setItem("theme", "dark");
       body.setAttribute("data-theme", "dark");
-      if(document.querySelector('iframe').length > 0){
+      if(!document.querySelector('iframe') === null){
         const message = {
           type: 'set-theme',
           theme: 'github-dark'
