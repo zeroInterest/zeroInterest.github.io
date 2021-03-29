@@ -1,18 +1,5 @@
 <!-- unnecessary file, however you can still use for comment section, e.g disqus -->
 
-<script>
-    
-    const initComments = (state) => {
-      if (state === "dark") {
-        document.querySelectorAll("link[href ='/stylesheets/themes/github-light/utterances.css']")[0].setAttribute("href", '/stylesheets/themes/github-dark/utterances.css');
-      } else if (state === "light") {
-        document.querySelectorAll("link[href ='/stylesheets/themes/github-dark/utterances.css']")[0].setAttribute("href", '/stylesheets/themes/github-light/utterances.css')
-      } 
-    };
- 
-    initComments(localStorage.getItem("theme"));
-  </script>
-
 
 
 <script src="https://utteranc.es/client.js"
