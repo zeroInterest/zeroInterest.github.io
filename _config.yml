@@ -23,7 +23,7 @@ author:
   avatar: /assets/img/logo.png # change with your own avatar
 
 # URL settings
-url: "https://klise.now.sh" #
+url: "https://zerointerest.github.io/" #
 baseurl:
 permalink: /:title/
 google_analytics: # leave it blank if not wish
