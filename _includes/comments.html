@@ -3,7 +3,7 @@
 <script>
     const body = document.body;
 
-    const initTheme = (state) => {
+    const initComments = (state) => {
       if (state === "dark") {
         document.querySelectorAll("link[href ='/stylesheets/themes/github-light/utterances.css']")[0].setAttribute("href", '/stylesheets/themes/github-dark/utterances.css');
       } else if (state === "light") {
@@ -11,7 +11,7 @@
       } 
     };
  
-    initTheme(localStorage.getItem("theme"));
+    initComments(localStorage.getItem("theme"));
   </script>
 
 
