@@ -67,3 +67,6 @@ Even with all these indicators, it is difficult to say whether this will happen 
 * The emergence of inflation would imply an increase in interest rates.
 * An increase in interest rates would mean that the premium paid for stocks would be lost.
 * Despite all these facts, timing the market is no easy task. And thus, other factors could keep inflation away and interest rates away, prolonging this situation.
+
+
+I also published this post on [Reddit](https://www.reddit.com/r/wallstreetbets/comments/nbdztx/why_potential_inflation_could_lead_to_a_financial/)
