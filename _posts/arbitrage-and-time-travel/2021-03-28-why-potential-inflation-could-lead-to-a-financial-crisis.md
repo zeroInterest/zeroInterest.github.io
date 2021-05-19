@@ -50,7 +50,8 @@ But what would happen if inflation persists and interest rates have to be risen?
 
 {% include image.html url="/assets/img/ad6oocg86vy61.png" description="Figure 5. Bloomberg agriculture index" %}
 
-{% include image.html url="/assets/img/5oc8mgum6vy61.png" description="Figure 6. Annual Single-family home price [Source](https://www.bloomberg.com/news/articles/2021-05-11/u-s-home-prices-surge-the-most-on-record-in-buying-frenzy?sref=RJ2RlMrh)" %}
+{% include image.html url="/assets/img/5oc8mgum6vy61.png" description="Figure 6. Annual Single-family home price" %}
+*[Source](https://www.bloomberg.com/news/articles/2021-05-11/u-s-home-prices-surge-the-most-on-record-in-buying-frenzy?sref=RJ2RlMrh)*
 
 **The market can not be timed**
 
