@@ -1,12 +1,12 @@
 # Site settings
 title: Zero Interest # site title
 description: >- # site description
-  He's writing in Bahasa about web technology and experience as a journal 
-  for documentation things that he learned, meet him <a href="https://github.com/piharpi" target="_blank" rel="noopener">@github</a>.
+  In the event that a time machine could freely move people and their money through time,
+  after-tax real interest rates would always be zero. <a href="https://github.com/zeroInterest" target="_blank" rel="noopener">@github</a>.
 lang: en-US # default lang
 timezone: Europe/Berlin # set your timezone
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
-repo: https://github.com/piharpi/jekyll-klise # site repo [optional]
+repo: https://github.com/zeroInterest # site repo [optional]
 mode: light # default theme "dark" | "light"
 
 # Profile settings
