@@ -9,6 +9,10 @@ categories: economics
 
 The decade of the 2000s may have been a pretty good decade in many aspects, movies such as the lord of the rings or harry potter were released; music albums such as The Strokes' "Is this It" or Bob Dylan's "Modern Times" were released. Nevertheless, this decade was not a good one in economic terms. This decade started with the dotcom crash, which was triggered by the rise and fall of technology stocks. And, this was not the only remarkable economic event of this decade, when the economy seemed to have recovered from this crisis, another crisis broke out, the financial crisis of 2007-2008, triggered by the collapse of the housing market in the U.S. All these economic turbulences can be clearly seen in the evolution of the S&P500 between 2000 and 2010 as shown in Figure 1.
 
+![Figure 1. S&P500 (2000 - 2010)](/assets/img/6g7jwgdjnuy61.png)
+
+
+
 **A time of low interest rates**
 
 Moreover, these economic disturbances led governments to act severely. Keynesian policies for the activation of the economy began to play a fundamental role. To encourage consumption, interest rates were lowered to near historic lows. Figure 2 displays the US 10 year note bond yield between 1920 and 2020. In this figure, we can see how the dotcom crash pushed down this yield. However, after that it started recovering until July 2007, when the financial crisis started, after that, that yield continued a downward trend.
