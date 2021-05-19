@@ -28,9 +28,9 @@ Moreover, these economic disturbances led governments to act severely. Keynesian
 
 Such a long period of low interest rates inflated stock prices. Figure 3, shows how cyclically adjusted S&P 500 price-to-earnings ratio has been rising during the last decade, being quite high in comparison to other periods of time (specially before the dot-com bubble). Stock prices started trading at a premium, because there were no attractive alternative investments, this channelled much of the liquidity into equities (bonds with almost no interest or even negative interests were not an attractive investment anymore). Hence, low interest rates justify high stock prices, since stocks are highly attractive relative to bonds.
 
-| ![Figure 3: Cyclically adjusted S&P 500 price-to-earnings rations](/assets/img/9al89cizwuy61.png) | 
+| ![Figure 3. Cyclically adjusted S&P 500 price-to-earnings rations](/assets/img/9al89cizwuy61.png) | 
 |:--:| 
-| *Figure 3: Cyclically adjusted S&P 500 price-to-earnings rations* |
+| *Figure 3. Cyclically adjusted S&P 500 price-to-earnings rations* |
 
 **An unexpected event: A global pandemic**
 
@@ -58,9 +58,21 @@ The appearance of inflation means that interest rates should rise. Something tha
 
 But what would happen if inflation persists and interest rates have to be risen? Remember that I previously said that stocks are trading at a premium due to the lack of attractive alternative investments. This would no longer be true and this premium would no longer be a thing. And, thus, we should expect a decrease in the stock price.
 
+| ![Figure 5. Bloomberg agriculture index](/assets/img/ad6oocg86vy61.png) | 
+|:--:| 
+| *Figure 5. Bloomberg agriculture index* |
+
+| ![Figure 6. Annual Single-family home price](/assets/img/5oc8mgum6vy61.png) | 
+|:--:| 
+| *Figure 6. Annual Single-family home price [Source](https://www.bloomberg.com/news/articles/2021-05-11/u-s-home-prices-surge-the-most-on-record-in-buying-frenzy?sref=RJ2RlMrh)* |
+
 **The market can not be timed**
 
 Even with all these indicators, it is difficult to say whether this will happen in the short to medium term. There are many factors which could deter inflation away and interest rates low. As an example, Berkshire Hathaway has been stacking cash during the last years, as shown in Figure 7, playing a slightly more defensive position. This may be due the fact that they already saw that low interest rates during the last decade were driving the stock market at high prices. However, interest rates are still low and during that time the stock market has continued rising.
+
+| ![Figure 7. Berkshire's Cash Holdings](/assets/img/3ag5lqt6cvy61.png) | 
+|:--:| 
+| *Figure 7. Berkshire's Cash Holdings* |
 
 **Summary**
 
