@@ -20,15 +20,27 @@ The decade of the 2000s may have been a pretty good decade in many aspects, movi
 
 Moreover, these economic disturbances led governments to act severely. Keynesian policies for the activation of the economy began to play a fundamental role. To encourage consumption, interest rates were lowered to near historic lows. Figure 2 displays the US 10 year note bond yield between 1920 and 2020. In this figure, we can see how the dotcom crash pushed down this yield. However, after that it started recovering until July 2007, when the financial crisis started, after that, that yield continued a downward trend.
 
+| ![Figure 2. US 10 Year Note Bond Yield](assets/img/p7mnvg3gduy61.png) | 
+|:--:| 
+| *Figure 2. US 10 Year Note Bond Yield* |
+
 **Stocks as the only attractive investment vehicle**
 
 Such a long period of low interest rates inflated stock prices. Figure 3, shows how cyclically adjusted S&P 500 price-to-earnings ratio has been rising during the last decade, being quite high in comparison to other periods of time (specially before the dot-com bubble). Stock prices started trading at a premium, because there were no attractive alternative investments, this channelled much of the liquidity into equities (bonds with almost no interest or even negative interests were not an attractive investment anymore). Hence, low interest rates justify high stock prices, since stocks are highly attractive relative to bonds.
+
+| ![Figure 3: Cyclically adjusted S&P 500 price-to-earnings rations](assets/img/9al89cizwuy61.png) | 
+|:--:| 
+| *Figure 3: Cyclically adjusted S&P 500 price-to-earnings rations* |
 
 **An unexpected event: A global pandemic**
 
 2020 was not a good year, this year will always be remembered as the year of the COVID. COVID brought many changes in our lives, which undoubtedly had an impact on the economy.    As a result, governments continued to pursue stimulative policies and interest rates remained at very low levels.
 
 One of the best illustrations of those stimulative policies is the amount of dollars printed in 2020: 21% of the United States dollar was printed in 2020, as shown in Figure 4. This large injection was used for both direct and indirect assistance in the COVID situation. This, at the same time, indirectly channelled part of this aid to the financial markets, increasing their value.
+
+| ![Figure 4. Annual Money Stock Growth (Trillions of USD)](assets/img/l0c36b3gzuy61.png) | 
+|:--:| 
+| *Figure 4. Annual Money Stock Growth (Trillions of USD)* |
 
 **A  double-edged sword**
 
