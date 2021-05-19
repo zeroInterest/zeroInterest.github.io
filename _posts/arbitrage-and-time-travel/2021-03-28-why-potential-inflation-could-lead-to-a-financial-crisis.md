@@ -38,7 +38,7 @@ Injecting money to the economy is always something controversial. Through the la
 
 >"**We are seeing very substantial inflation \[...\] We are raising prices. People are raising prices to us and it’s being accepted.”**
 
-This raise on prices can be  already tracked on several indices such as Bloomberg's agriculture index, shown in Figure 5 and also in the annual single-family home price, as shown in Figure 6.
+This raise on prices can be  already tracked on several indices such as Bloomberg's agriculture index, shown in Figure 5 and also in the annual single-family home price, as shown in Figure 6 (*[Figure 6 Source](https://www.bloomberg.com/news/articles/2021-05-11/u-s-home-prices-surge-the-most-on-record-in-buying-frenzy?sref=RJ2RlMrh)*).
 
 &#x200B;
 
@@ -51,7 +51,6 @@ But what would happen if inflation persists and interest rates have to be risen?
 {% include image.html url="/assets/img/ad6oocg86vy61.png" description="Figure 5. Bloomberg agriculture index" %}
 
 {% include image.html url="/assets/img/5oc8mgum6vy61.png" description="Figure 6. Annual Single-family home price" %}
-*[Source](https://www.bloomberg.com/news/articles/2021-05-11/u-s-home-prices-surge-the-most-on-record-in-buying-frenzy?sref=RJ2RlMrh)*
 
 **The market can not be timed**
 
