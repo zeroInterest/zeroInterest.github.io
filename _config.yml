@@ -11,7 +11,8 @@ mode: light # default theme "dark" | "light"
 
 # Profile settings
 author:
-  name: Zero # author name
+  name: Francesc Busquet # author name
+  name2: [Fran]
   bio: >- # tell to the world
     In the event that a time machine could freely move people and their money through time, after-tax real interest rates would always be zero.
   username: username # general username
