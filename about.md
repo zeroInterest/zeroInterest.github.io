@@ -1,3 +1,5 @@
+ {% include author.html %}
+
 ---
 title: 
 permalink: /about/
