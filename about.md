@@ -1,7 +1,7 @@
 ---
 title: About
 permalink: /about/
-layout: page
+layout: aboutPage
 excerpt: Welcome to Zero Interest, a blog about Economics and Finance.
 comments: false
 ---
