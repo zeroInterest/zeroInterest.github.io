@@ -663,18 +663,18 @@ $blueColor:rgba(33,150,243,1);
 
 @keyframes icon3d {
   0% {
-    text-shadow: 5px 4px $redColor, -5px -6px $blueColor;
+    text-shadow: 1.25px 1px $redColor, -1.25px -1.5px $blueColor;
   }
   25% {
-    text-shadow: -5px -6px $redColor, 5px 4px $blueColor;
+    text-shadow: -1.25px -1.5px $redColor, 1.25px 1px $blueColor;
   }
   50% {
-    text-shadow: 5px -4px $redColor, -8px 4px $blueColor;
+    text-shadow: 1.25px -1px $redColor, -2px 1px $blueColor;
   }
   75% {
-    text-shadow: -8px -4px $redColor, -5px -4px $blueColor;
+    text-shadow: -2px -1px $redColor, -1.25px -1px $blueColor;
   }
   100% {
-    text-shadow: -5px 0 $redColor, 5px -4px $blueColor;
+    text-shadow: -1.25px 0 $redColor, 1.25px -4px $blueColor;
   }
 }
