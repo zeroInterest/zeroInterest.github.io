@@ -20,7 +20,13 @@ author:
   facebook: facebook_username # facebook username
   email: your-email@email.com # email adress
   avatar: /assets/img/logo.png # change with your own avatar
-
+  
+site:
+  name1: Francesc Busquet # author name
+  name2: '[Fran]'
+  bio: >- # tell to the world
+     Data Scientist and Research Associate at the Institute of Behavorial Science and Technoligy at the University of St. Gallen.
+  
 # URL settings
 url: "https://zerointerest.github.io/" #
 baseurl:
