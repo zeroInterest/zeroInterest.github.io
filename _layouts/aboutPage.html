@@ -30,10 +30,11 @@ layout: compress
 
   {% include navbar.html %}
   <div class="wrapper">
-    {% include author.html %}
+    
     <header class="header">
       <h1 class="header-title center" itemprop="headline">{{ page.title | escape }}.</h1>
     </header>
+    {% include author.html %}
     <main class="page-content" aria-label="Content">
       {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=4 h_max=4 %}
     </main>
