@@ -3,7 +3,7 @@ layout: post
 title:  "Why potential inflation could lead to a financial crisis?"
 comments: true
 date:   2021-03-28 21:00:20 +0700
-categories: economics
+tags: economics
 ---
 
 **A bit of history**
