@@ -1,7 +1,7 @@
 # Site settings
 title: Zero Interest # site title
 description: >- # site description
-  Data Scientist and Research Associate at the Institute of Behavorial Science and Technology at the University of St. Gallen <a href="https://github.com/zeroInterest" target="_blank" rel="noopener">@github</a>.
+  In the event that a time machine could freely move people and their money through time, after-tax real interest rates would always be zero.
 lang: en-US # default lang
 timezone: Europe/Berlin # set your timezone
 image: assets/img/opg.png # This image used for Open Graph more info https://ogp.me/
@@ -13,7 +13,7 @@ author:
   name: Francesc Busquet # author name
   name2: '[Fran]'
   bio: >- # tell to the world
-     Data Scientist and Research Associate at the Institute of Behavorial Science and Technoligy at the University of St. Gallen.
+     Data Scientist and Research Associate at the Institute of Behavorial Science and Technology at the University of St. Gallen.
   username: username # general username
   github: github_username # github username
   twitter: twitter_username # twitter username
