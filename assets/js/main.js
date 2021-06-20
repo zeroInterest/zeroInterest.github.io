@@ -57,7 +57,7 @@ window.onload = function() {
         };
         var utterances = document.querySelector('iframe');
         utterances.contentWindow.postMessage(message, 'https://utteranc.es');
-      }, 1500);
+      }, 750);
     }
 }
 
