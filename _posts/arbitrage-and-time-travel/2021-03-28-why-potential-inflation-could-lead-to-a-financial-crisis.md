@@ -20,7 +20,7 @@ Moreover, these economic disturbances led governments to act severely. Keynesian
 
 **Stocks as the only attractive investment vehicle**
 
-Such a long period of low interest rates inflated stock prices. Figure 3, shows how cyclically adjusted S&P 500 price-to-earnings ratio has been rising during the last decade, being quite high in comparison to other periods of time (specially before the dot-com bubble). Stock prices started trading at a premium, because there were no attractive alternative investments, this channelled much of the liquidity into equities (bonds with almost no interest or even negative interests were not an attractive investment anymore). Hence, low interest rates justify high stock prices, since stocks are highly attractive relative to bonds.
+Such a long period of low interest rates inflated stock prices. Figure 3, shows how cyclically adjusted S&P 500 price-to-earnings ratio has been rising during the last decade, being quite high in comparison to other periods of time (specially before the dot-com bubble). Stock prices started trading at a premium, because there were no attractive alternative investments, this channelled much of the liquidity into equities (bonds with almost no interest or even negative interests were not an attractive investment anymore) {% cite shiller2020cape %}. Hence, low interest rates justify high stock prices, since stocks are highly attractive relative to bonds.
 
 {% include image.html url="/assets/img/9al89cizwuy61.png" description="Figure 3. Cyclically adjusted S&P 500 price-to-earnings rations" %}
 
@@ -38,7 +38,7 @@ Injecting money to the economy is always something controversial. Through the la
 
 >"**We are seeing very substantial inflation \[...\] We are raising prices. People are raising prices to us and it’s being accepted.”**
 
-This raise on prices can be  already tracked on several indices such as Bloomberg's agriculture index, shown in Figure 5 and also in the annual single-family home price, as shown in Figure 6 (*[Figure 6 Source](https://www.bloomberg.com/news/articles/2021-05-11/u-s-home-prices-surge-the-most-on-record-in-buying-frenzy?sref=RJ2RlMrh)*).
+This raise on prices can be  already tracked on several indices such as Bloomberg's agriculture index, shown in Figure 5 and also in the annual single-family home price, as shown in Figure 6 {% cite gopal_2021 %}.
 
 &#x200B;
 
@@ -67,6 +67,16 @@ Even with all these indicators, it is difficult to say whether this will happen 
 * The emergence of inflation would imply an increase in interest rates.
 * An increase in interest rates would mean that the premium paid for stocks would be lost.
 * Despite all these facts, timing the market is no easy task. And thus, other factors could keep inflation away and interest rates away, prolonging this situation.
+
+<details><summary>Bibliography</summary>
+<p>
+
+{% bibliography --cited %}
+
+</p>
+</details>
+
+
 
 
 I also published this post on [Reddit](https://www.reddit.com/r/wallstreetbets/comments/nbdztx/why_potential_inflation_could_lead_to_a_financial/)
