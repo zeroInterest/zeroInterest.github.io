@@ -95,6 +95,10 @@ body[data-theme="dark"] {
     -webkit-filter: invert(1);
     filter: invert(1);
   }
+  
+  .invertImage figcaption{
+    color: #434648;
+  }
 
   // Link
   a {
