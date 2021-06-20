@@ -47,7 +47,8 @@
 })();
 
 
-window.onload = function() {
+
+$('.utterances-frame').on('load', function(){
     var startTheme = body.getAttribute("data-theme")
     if (startTheme == "dark") {
     var message = {
@@ -57,4 +58,4 @@ window.onload = function() {
       var utterances = document.querySelector('iframe');
       utterances.contentWindow.postMessage(message, 'https://utteranc.es');
     }
-}
+});
