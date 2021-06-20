@@ -45,3 +45,16 @@
       : area.classList.remove("blurry");
   });
 })();
+
+
+window.onload = function() {
+    var startTheme = body.getAttribute("data-theme")
+    if (startTheme == "dark") {
+    var message = {
+        type: 'set-theme',
+        theme: 'github-dark'
+      };
+      var utterances = document.querySelector('iframe');
+      utterances.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+}
