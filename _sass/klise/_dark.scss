@@ -90,6 +90,11 @@ body[data-theme="dark"] {
       border-color: $dark-light;
     }
   }
+  
+  .invertImage{
+    -webkit-filter: invert(1);
+    filter: invert(1);
+  }
 
   // Link
   a {
