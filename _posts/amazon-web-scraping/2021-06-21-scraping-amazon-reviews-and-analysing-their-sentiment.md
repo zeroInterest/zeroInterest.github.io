@@ -88,7 +88,8 @@ ratings
 ```
 And as we can see, we obtain the HTML code as an xml nodeset corresponding to all the elements with this class:
 
-<pre><code>## {xml_nodeset (6)}
+<pre><code>
+## {xml_nodeset (6)}
 {xml_nodeset (12)}
  [1] <i data-hook="review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span class="a- ...
  [2] <i data-hook="review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span class="a- ...
