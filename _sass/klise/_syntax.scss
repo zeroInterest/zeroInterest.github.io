@@ -1,5 +1,10 @@
 /* --- Code blocks --- */
 
+pre.highlight, pre {
+  display: block;
+  overflow-x: auto;
+}
+
 code {
   padding: 0.125rem 0.25rem;
   color: #c7254e;
