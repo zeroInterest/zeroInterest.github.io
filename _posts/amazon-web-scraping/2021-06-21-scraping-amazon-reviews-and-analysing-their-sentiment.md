@@ -28,3 +28,13 @@ To go to the reviews page of a product on amazon, we just have to search for tha
 {% include image.html url="/assets/img/amazon-web-scraping/light_reviews.gif" description="Figure 1. Going to Amazon Product Reviews Page" %}{: class="lightImage"}
 
 Here, we can begin inspecting the structure of this page. To do this, we will use the inspect elements tool included in most web browsers. In my case I use chrome as my main browser, so my examples will be based on how it would be done in that browser. However, for other web browsers the process would be almost identical. So, what we will do first is to right-click on the elements we are interested in, i.e. the review date, the review rating and the review text. After right-clicking to that element we select **Inspect**. Now we have access to the browser developer tools and can check the backbone of this page. Again, in this case it makes no difference which review we inspect, as they will all follow the same structure.  
+
+{% include image.html url="/assets/img/amazon-web-scraping/reviewdate_dark.png" description="Figure 1. Going to Amazon Product Reviews Page" %}{: class="darkImage"}
+{% include image.html url="/assets/img/amazon-web-scraping/reviewdate_light.png" description="Figure 1. Going to Amazon Product Reviews Page" %}{: class="lightImage"}
+
+{% include image.html url="/assets/img/amazon-web-scraping/reviewrating_dark.png" description="Figure 1. Going to Amazon Product Reviews Page" %}{: class="darkImage"}
+{% include image.html url="/assets/img/amazon-web-scraping/reviewrating_light.png" description="Figure 1. Going to Amazon Product Reviews Page" %}{: class="lightImage"}
+
+{% include image.html url="/assets/img/amazon-web-scraping/reviewtext_dark.png" description="Figure 1. Going to Amazon Product Reviews Page" %}{: class="darkImage"}
+{% include image.html url="/assets/img/amazon-web-scraping/reviewtext_light.png" description="Figure 1. Going to Amazon Product Reviews Page" %}{: class="lightImage"}
+
