@@ -50,5 +50,5 @@ By checking the classes of these elements, we can see that there are some pretty
 {% include image.html url="/assets/img/amazon-web-scraping/reviewtext_light.png" description="Figure 5. Selecting the Review Text" %}{: class="lightImage"}
 
 
-{% include image.html url="/assets/img/amazon-web-scraping/reviewtext_light.png" description="Figure 6. SSchematic Structure" %}{: class="invertImage"}
+{% include image.html url="/assets/img/amazon-web-scraping/structure.PNG" description="Figure 6. Schematic Structure" %}{: class="invertImage"}
 
