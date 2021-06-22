@@ -6,7 +6,7 @@ date:   2021-06-21 21:00:20 +0100
 tags: data-analysis
 ---
 
-**What is web scraping?**
+# What is web scraping?
 
 Web scraping consists in systematically collecting information from the Internet. This practice is as old as the internet and there are different techniques to carry it out, being the simplest one the manual copy and paste of information from a web page into a text file or a spreadsheet. Even so, this technique is not the best for quick collection of large amounts of data. Therefore, to collect large volumes of data, techniques that automate this process are used. Generally, these techniques look for patterns that identify what we want to extract. In this example we will use patterns in the HTML structure of the website in order to extract the information we are interested in.
 
