@@ -60,8 +60,44 @@ After inspecting the page it is obvious that there are a number of classes that 
 
 {% include image.html url="/assets/img/amazon-web-scraping/schematic.png" description="Figure 6. Schematic Structure" %}{: class="invertImage"}
 
+# Scraping Reviews with R
+## Scraping the first review page
+Now after understanding the HTML structure of the page, let’s use the `rvest` package, a package that makes it easy to scrape data from HTML web pages, inspired by libraries like [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/).
 
-### Scraping one review page
-Now after understanding the HTML structure of the page, let’s use the `r rvest` package, a package that makes it easy to scrape data from HTML web pages, inspired by libraries like [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/).
+```r
+library(rvest)
+```
 
+First, we retrieve the HTML code of the website and load it into R. To do so we can use the `read_html( )` function, specifying the website url as a parameter.
 
+```r
+# Specify the website URL
+url <- "https://www.amazon.com/Huawei-Dual-SIM-Factory-Unlocked-Smartphone/product-reviews/B084YWQF5R/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews" 
+
+# Read the website HTML
+webpage <- read_html(url)
+```
+
+Now that we have the website’s HTML loaded into R, we can extract whatever we are interested in using the `html_nodes( )` function, in which we specify the object obtained using the `read_html( )` function, i.e. webpage as first argument and then as second argument the tag name, class, or id that we want to extract (remember that the class must have a dot . and ids a hash symbol # preceding their name).
+
+First, we extract all the rewview ratings. To do so we use `html_nodes( )` specifying as second argument the **review-rating** class ".review-rating". And as we can see, we obtain the HTML corresponding to all the elements with this class.
+
+```r
+date <- html_nodes(webpage, ".review-rating") 
+date
+```
+<pre><code>## {xml_nodeset (6)}
+{xml_nodeset (12)}
+ [1] <i data-hook="review-star-rating-view-point" class= ...
+ [2] <i data-hook="review-star-rating-view-point" class= ...
+ [3] <i data-hook="review-star-rating" class="a-icon a-i ...
+ [4] <i data-hook="review-star-rating" class="a-icon a-i ...
+ [5] <i data-hook="review-star-rating" class="a-icon a-i ...
+ [6] <i data-hook="review-star-rating" class="a-icon a-i ...
+ [7] <i data-hook="review-star-rating" class="a-icon a-i ...
+ [8] <i data-hook="review-star-rating" class="a-icon a-i ...
+ [9] <i data-hook="review-star-rating" class="a-icon a-i ...
+[10] <i data-hook="cmps-review-star-rating" class="a-ico ...
+[11] <i data-hook="cmps-review-star-rating" class="a-ico ...
+[12] <i data-hook="cmps-review-star-rating" class="a-ico ...
+</code></pre>
