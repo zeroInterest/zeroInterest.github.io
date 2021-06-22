@@ -61,8 +61,7 @@ After inspecting the page it is obvious that there are a number of classes that 
 {% include image.html url="/assets/img/amazon-web-scraping/schematic.png" description="Figure 6. Schematic Structure" %}{: class="invertImage"}
 
 
-```ruby
-def foo
-  puts 'foo'
-end
-```
+### Scraping one review page
+Now after understanding the HTML structure of the page, let’s use the `rvest` package, a package that makes it easy to scrape data from HTML web pages, inspired by libraries like [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/).
+
+
