@@ -227,7 +227,8 @@ for (product_code in product_codes) {
     date <- html_nodes(webpage, ".review .review-date")
     date <- html_text(date, trim = TRUE)
     #Add the product code in the table
-    table <- data.frame(ratings, reviews, date, rep(product_code, length(reviews)))
+    table <- data.frame(ratings, reviews, date, rep(product_code, 
+             length(reviews)))
     final_table <- rbind(final_table, table)
     #Increase page Number
     pageNumber <- pageNumber + 1 
@@ -246,25 +247,28 @@ final_table$ReviewText <- as.character(final_table$ReviewText)
 ### Making the code more reusable
 
 The previous code could be converted into a function for better reusability. Furthermore, we applied an additional change: storing the product name instead of the product code.
+Finally, we also preprocess the extracted date, since it incorporates information about the country in which the product was reviewed and the rating, which is in format X out of 5.0 where we only want X, which is the rating given by the reviewer (a number between 1 and 5).
 
 ```r
 getReviewsFromAmazon <- function(product_codes, product_names = c()){
-  final_table <- matrix(ncol = 4, nrow = 1) #We define two additional columns, one for date and the other for stars
-
+#We define two additional columns, one for date and the other for stars
+  final_table <- matrix(ncol = 4, nrow = 1) 
   for (product_code in product_codes) {
   
-    url <- paste0("https://www.amazon.com/product-reviews/", product_code, "/?pageNumber=")
+    url <- paste0("https://www.amazon.com/product-reviews/", product_code, 
+           "/?pageNumber=")
     pageNumber <- 1
     webpage <- read_html(paste0(url, pageNumber))
     
     while (length(html_nodes(webpage, ".review")) > 0) {
       reviews <- html_nodes(webpage, ".review-text-content")
       reviews <- html_text(reviews, trim = TRUE)
-      date <- html_nodes(webpage, ".review .review-date") #We get the date, we specify 2 classes, because outside of normal reviews there are some dates and this would generate problems
+      date <- html_nodes(webpage, ".review .review-date") 
       date <- html_text(date, trim = TRUE)
-      stars <- html_nodes(webpage, ".review .review-rating") #we do the same for stars
-      stars <- html_text(stars, trim = TRUE)
-      table <- cbind(as.vector(reviews), as.vector(date), as.vector(stars), rep(product_code, length(reviews))) #add extracted date to table also
+      ratings <- html_nodes(webpage, ".review .review-rating")
+      ratings <- html_text(stars, trim = TRUE)
+      table <- data.frame(ratings, reviews, date, rep(product_code, 
+             length(reviews)))
       final_table <- rbind(final_table, table)
       pageNumber <- pageNumber + 1
       webpage <- read_html(paste0(url, pageNumber))
@@ -274,12 +278,17 @@ getReviewsFromAmazon <- function(product_codes, product_names = c()){
   final_table <- as.data.frame(final_table)
   final_table <- final_table[-1,]
   colnames(final_table) <- c("ReviewText", "Date", "Rating", "ProductCode")
-  final_table$ReviewText <- as.character(final_table$ReviewText) #Text may be read as Factor, so convert it into character
-  final_table$Date <-  gsub(".*on ", "", final_table$Date) #date contains also location information, we remove it
-  final_table$Rating <-  gsub(" out.*", "", final_table$Rating) #Rating is in format x out of 5 stars, we only need x
-  final_table$Rating <- as.numeric(final_table$Rating) #Convert Rating to Numeric
+  #Text may be read as Factor, so convert it into character
+  final_table$ReviewText <- as.character(final_table$ReviewText) 
+  #date contains also location information, we remove it
+  final_table$Date <-  gsub(".*on ", "", final_table$Date) 
+  #Rating is in format x out of 5 stars, we only need x
+  final_table$Rating <-  gsub(" out.*", "", final_table$Rating) 
+  #Convert Rating to Numeric
+  final_table$Rating <- as.numeric(final_table$Rating) 
   final_table$ProductCode <- as.factor(final_table$ProductCode)
-  levels(final_table$ProductCode) <- product_names #Change the product codes to the product names
+  #Change the product codes to the product names
+  levels(final_table$ProductCode) <- product_names 
   return(final_table)
 }
 
