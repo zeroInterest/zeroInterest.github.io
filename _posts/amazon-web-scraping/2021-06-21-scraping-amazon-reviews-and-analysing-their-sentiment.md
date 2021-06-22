@@ -132,12 +132,13 @@ Finally, we can add all this information into a data.frame:
 final_table <- data.frame(reviews, date, ratings)
 ```
 
+
 ## Scraping all the pages
 
 You may have already noticed, but Amazon does not show all the reviews on a single page, rather it splits the reviews into different pages, showing a maximum of 10 reviews per page. For this reason, in order to extract all the reviews we should repeat the above process for each of the review pages. Therefore, we could perform two basic procedures to achieve that:
 
 1. Scrape the total number of reviews, divide it by 10 in order to obtain the total number of pages. Then, use a **for** loop to iterate between all these pages and extract the date, the text and the rating for all the reviews in each page.
-2. Use a **while** loop to iterate between pages and extract the date, the text and the rating for all the reviews in that page until no elements with class **review** are found.
+2. Use a **while** loop to iterate between pages and extract the date, the text and the rating for all the reviews in that page while elements of class **review** are found on that page.
 
 In this example we will use method 2. 
 
@@ -149,7 +150,39 @@ Now, the URL looks much more simpler. But actually that URL incorporates the pro
 
 After having simplified the URL, we can check what happens when we go to the next page by clicking the **Next page** button. And by doing so we can spot that now the URL is the following: [https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber=2](https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber=2). A parameter, called pageNumber, with value equal to 2 has been added to the URL (in case that other parameters were added to your URL, you can delete them). Now as a sanity check we can press again the **Next page** button, seeing that the the value of this parameter has changed to 3.
 
-So, it seems that we have already found a way to iterate between the different pages. We only need to paste a page number at the end of the following url: "https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber=".
+So, it seems that we have already found a way to iterate between the different pages. We only need to paste a page number at the end of the following url: https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber=
 
 
+### Extracting all the reviews
 
+To extract all the reviews the first thing we do is to define the URL on which we will iterate, i.e. the URL to which we will add the page number (https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber=). After that, we will define a variable called `pageNumber` with an initial value of 1. This is the variable on which we will iterate and which we will add at the end of the url, in order to refer to the reviews page we want to access.
+
+The URL that will be used to download the website's HTML is going to be the result of pasting https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber= and the page number (`pageNumber`).
+
+Furthermore, in this case we will need to create a priori an empty data.frame to which we will combine by rows the values of the new variables extracted for each page.
+
+Thus, the R code to extract all the reviews for the Huawei P40 Lite would be the following:
+
+```r
+url <- "https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber="
+pageNumber <- 1
+webpage <- read_html(paste0(url, pageNumber))
+final_table <- as.data.frame(matrix(ncol = 3, nrow = 1))
+
+#while there are elements with "review" class in webpage
+while (length(html_nodes(webpage, ".review")) > 0) {
+  #Pick all the information we want for that page (ratings, date and text)
+  ratings <- html_nodes(webpage, ".review .review-rating")
+  ratings <- html_text(ratings, trim = TRUE)
+  reviews <- html_nodes(webpage, ".review .review-text-content")
+  reviews <- html_text(reviews, trim = TRUE)
+  date <- html_nodes(webpage, ".review .review-date")
+  date <- html_text(date, trim = TRUE)
+  # Add this information to final_table
+  final_table <- rbind(final_table, as.vector(reviews))
+  #Increase page Number
+  pageNumber <- pageNumber + 1 
+  #Update web page
+  webpage <- read_html(paste0(url, pageNumber))
+}
+```
