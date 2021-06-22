@@ -167,6 +167,7 @@ Thus, the R code to extract all the reviews for the Huawei P40 Lite would be the
 url <- "https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber="
 pageNumber <- 1
 webpage <- read_html(paste0(url, pageNumber))
+#create an empty data frame (later we will have to delete first row as it will be empty)
 final_table <- as.data.frame(matrix(ncol = 3, nrow = 1))
 
 #while there are elements with "review" class in webpage
@@ -179,10 +180,63 @@ while (length(html_nodes(webpage, ".review")) > 0) {
   date <- html_nodes(webpage, ".review .review-date")
   date <- html_text(date, trim = TRUE)
   # Add this information to final_table
-  final_table <- rbind(final_table, as.vector(reviews))
+  table <- data.frame(ratings, reviews, date)
+  final_table <- rbind(final_table, table)
   #Increase page Number
   pageNumber <- pageNumber + 1 
   #Update web page
   webpage <- read_html(paste0(url, pageNumber))
 }
+
+#Remove the first row, which is empty
+final_table <- final_table[-1,]
+#Set Column names
+colnames(final_table) <- c("Ratings", "ReviewText", "Date")
+#Text may be read as Factor, so convert it into character
+final_table$ReviewText <- as.character(final_table$ReviewText) 
 ```
+
+## Scraping reviews for multiple products 
+
+The above code can be easily adapted to extract reviews of multiple products. To do so, we only have to make three changes:
+1. Define a vector with the product codes of the items for which we want to extract reviews.
+2. Iterate between these product codes and thus updating the url (i.e. changing the product code).
+3. Add an additional column to the data frame storing all the extracted information, in order to correctly identify to which product this information belongs to.
+
+
+```r
+#final table now has an additional column to store the product code
+final_table <- as.data.frame(matrix(ncol = 4, nrow = 1))
+for (product_code in product_codes) {
+  #URL updates product code by pasting its value
+  url <- paste0("https://www.amazon.com/product-reviews/", product_code, "/?pageNumber=")
+  pageNumber <- 1
+  webpage <- read_html(paste0(url, pageNumber))
+
+
+  
+  while (length(html_nodes(webpage, ".review")) > 0) {
+    ratings <- html_nodes(webpage, ".review .review-rating")
+    ratings <- html_text(ratings, trim = TRUE)
+    reviews <- html_nodes(webpage, ".review .review-text-content")
+    reviews <- html_text(reviews, trim = TRUE)
+    date <- html_nodes(webpage, ".review .review-date")
+    date <- html_text(date, trim = TRUE)
+    #Add the product code in the table
+    table <- data.frame(ratings, reviews, date, rep(product_code, length(reviews)))
+    final_table <- rbind(final_table, table)
+    #Increase page Number
+    pageNumber <- pageNumber + 1 
+    #Update web page
+    webpage <- read_html(paste0(url, pageNumber))
+  }
+}
+
+
+final_table <- final_table[-1,]
+colnames(final_table) <- c("Ratings", "ReviewText", "Date", "ProductCode")
+#Text may be read as Factor, so convert it into character
+final_table$ReviewText <- as.character(final_table$ReviewText) 
+```
+
+
