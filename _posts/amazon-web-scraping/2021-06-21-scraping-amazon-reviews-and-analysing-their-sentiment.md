@@ -131,4 +131,10 @@ Finally, we can add all this information into a data.frame:
 ```r
 final_table <- data.frame(reviews, date, ratings)
 ```
+
 ## Scraping all the pages
+
+You may have already noticed, but Amazon does not show all the reviews on a single page, rather it splits the reviews into different pages, showing a maximum of 10 reviews per page. For this reason, in order to extract all the reviews we should repeat the above process for each of the review pages. Therefore, we could perform two basic procedures to achieve that:
+
+1. Scrape the total number of reviews, divide it by 10 in order to obtain the total number of pages. Then, use a **for** loop to iterate between all these pages and extract the date, the text and the rating for all the reviews in each page.
+2. Use a **while** loop to iterate between pages and extract the date, the text and the rating for all the reviews in that page until no elements with class **review** are found.
