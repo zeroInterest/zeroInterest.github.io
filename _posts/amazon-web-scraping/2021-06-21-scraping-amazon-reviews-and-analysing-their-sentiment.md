@@ -204,6 +204,7 @@ The above code can be easily adapted to extract reviews of multiple products. To
 2. Iterate between these product codes and thus updating the url (i.e. changing the product code).
 3. Add an additional column to the data frame storing all the extracted information, in order to correctly identify to which product this information belongs to.
 
+Finally, we also preprocess the extracted date, since it incorporates information about the country in which the product was reviewed and the rating, which is in format X out of 5.0 where we only want X, which is the rating given by the reviewer (a number between 1 and 5).
 
 ```r
 # product codes of items we want to extract should be specified here
@@ -242,12 +243,17 @@ final_table <- final_table[-1,]
 colnames(final_table) <- c("Ratings", "ReviewText", "Date", "ProductCode")
 #Text may be read as Factor, so convert it into character
 final_table$ReviewText <- as.character(final_table$ReviewText) 
+#date contains also location information, we remove it
+final_table$Date <-  gsub(".*on ", "", final_table$Date) 
+#Rating is in format x out of 5 stars, we only need x
+final_table$Rating <-  gsub(" out.*", "", final_table$Rating) 
+#Convert Rating to Numeric
+final_table$Rating <- as.numeric(final_table$Rating) 
 ```
 
 ### Making the code more reusable
 
 The previous code could be converted into a function for better reusability. Furthermore, we applied an additional change: storing the product name instead of the product code.
-Finally, we also preprocess the extracted date, since it incorporates information about the country in which the product was reviewed and the rating, which is in format X out of 5.0 where we only want X, which is the rating given by the reviewer (a number between 1 and 5).
 
 ```r
 getReviewsFromAmazon <- function(product_codes, product_names = c()){
