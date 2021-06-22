@@ -33,6 +33,8 @@ A very useful tool built into chrome for inspecting pages is the element selecti
 
 Figures 2, 3 and 4 show the output of this tool when selecting the date, score and text of the first review, respectively. In them we can see that both the date and the text of the review are on span elements. While the review is on an i element. Moreover, we can see that each of these elements has several classes. Classes are often very important when it comes to establishing patterns through HTML, because their purpose is to identify elements that have a similar purpose in order to attribute the same style to them (for those that are not familiar with HTML and HTML classes, you can learn more about them [here](https://www.w3schools.com/html/default.asp)).
 
+By checking the classes of these elements, we can see that there are some pretty descriptive classes (in Figure 2, 3 and 4, classes are preceded by a dot. Thus each text before a dot corresponds to a class name). For example, the review date has as classes a-size-base, a-color-secondary and review-date; the review rating has as classes a-icon, a-icon-star, a-star-5 and review-rating; the review text has as classes a-size-base, review-text and review-text-content. 
+
 
 {% include image.html url="/assets/img/amazon-web-scraping/reviewdate_dark.png" description="Figure 2. Review Date" %}{: class="darkImage"}
 {% include image.html url="/assets/img/amazon-web-scraping/reviewdate_light.png" description="Figure 2. Review Date" %}{: class="lightImage"}
