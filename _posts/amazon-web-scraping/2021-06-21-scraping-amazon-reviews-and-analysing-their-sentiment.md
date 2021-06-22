@@ -56,7 +56,7 @@ By checking the classes of these elements, we can see that there are some pretty
 {% include image.html url="/assets/img/amazon-web-scraping/reviewtext_light.png" description="Figure 5. Selecting the Review Text" %}{: class="lightImage"}
 
 ### Setting the pattern
-
+After inspecting the page it is obvious that there are a number of classes that define exactly the elements we are interested in. In addition, these classes are very descriptive, making them easy to identify. Thus, whole reviews can be identified with the **review** class, review's ratings can be identified with the **review-rating** class, review's dates can be identified with the **review-date** and review's texts can be identified with the **review-text** class. Figure 6 visually depicts the classes that uniquely identify the elements we are interested in.
 
 {% include image.html url="/assets/img/amazon-web-scraping/schematic.png" description="Figure 6. Schematic Structure" %}{: class="invertImage"}
 
