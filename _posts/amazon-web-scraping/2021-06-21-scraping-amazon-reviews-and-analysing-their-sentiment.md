@@ -22,4 +22,10 @@ As we said at the beginning, we want to extract product reviews from Amazon. Spe
 
 The first thing we will do is to go to any review page, as we want to analyse how that page is structured. In this example we will analyse the structure of the reviews for the Huawei P40 Lite (but you can do this process with the reviews page of any other product). To go to the reviews page of a product on amazon, we just have to search for that product and once we are on the product page go to the bottom of this page where we will see some of the most relevant reviews and below them we will see a link saying "See all reviews", which we will click in order to access to the product reviews page.
 
-{% include image.html url="/assets/img/amazon-web-scraping/light_reviews.gif" description="Figure 1. Going to Amazon Product Reviews Page" %}
+
+{% if mode == 'dark' %}
+    {% include image.html url="/assets/img/amazon-web-scraping/dark_reviews.gif" description="Figure 1. Going to Amazon Product Reviews Page" %}
+{% elsif mode == 'light' %}
+    {% include image.html url="/assets/img/amazon-web-scraping/light_reviews.gif" description="Figure 1. Going to Amazon Product Reviews Page" %}
+{% endif %} 
+
