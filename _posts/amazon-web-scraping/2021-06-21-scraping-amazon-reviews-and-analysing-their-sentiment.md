@@ -27,4 +27,4 @@ To go to the reviews page of a product on amazon, we just have to search for tha
 {% include image.html url="/assets/img/amazon-web-scraping/dark_reviews.gif" description="Figure 1. Going to Amazon Product Reviews Page" %}{: class="darkImage"}
 {% include image.html url="/assets/img/amazon-web-scraping/light_reviews.gif" description="Figure 1. Going to Amazon Product Reviews Page" %}{: class="lightImage"}
 
-
+Here, we can begin inspecting the structure of this page. To do this, we will use the inspect elements tool included in most web browsers. In my case I use chrome as my main browser, so my examples will be based on how it would be done in that browser. However, for other web browsers the process would be almost identical.
