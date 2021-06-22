@@ -96,6 +96,14 @@ body[data-theme="dark"] {
     filter: invert(1);
   }
   
+  .lightImage{
+    display:none;
+  }
+  
+  .darkImage{
+    display: block;
+  }
+  
   .invertImage figcaption{
     color: #434648;
   }
