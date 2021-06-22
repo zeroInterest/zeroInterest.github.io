@@ -59,6 +59,7 @@ body[data-theme="dark"] {
 
   // Syntax
   code {
+    color: #e4e6eb;
     &.highlighter-rouge {
       background-color: $dark-light;
     }
