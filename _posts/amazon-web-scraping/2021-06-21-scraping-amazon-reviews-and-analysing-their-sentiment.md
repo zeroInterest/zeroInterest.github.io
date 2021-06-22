@@ -138,3 +138,18 @@ You may have already noticed, but Amazon does not show all the reviews on a sing
 
 1. Scrape the total number of reviews, divide it by 10 in order to obtain the total number of pages. Then, use a **for** loop to iterate between all these pages and extract the date, the text and the rating for all the reviews in each page.
 2. Use a **while** loop to iterate between pages and extract the date, the text and the rating for all the reviews in that page until no elements with class **review** are found.
+
+In this example we will use method 2. 
+
+### Iterating between pages
+
+To iterate between pages, we must first understand how links work on Amazon. The link to the amazon reviews page for the product from which we are scraping reviews in this example is the following: [https://www.amazon.com/Huawei-Dual-SIM-Factory-Unlocked-Smartphone/product-reviews/B084YWQF5R/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews](https://www.amazon.com/Huawei-Dual-SIM-Factory-Unlocked-Smartphone/product-reviews/B084YWQF5R/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews). As you can see, it is quite a long link. This is because it incorpates a query string, i.e. a part of a URL that assigns values to specicified parameters. Hence, we could simplify the URL by deleting this part, as we don't need to set any parameters right now, obtaining the following simplified version of the URL: [https://www.amazon.com/Huawei-Dual-SIM-Factory-Unlocked-Smartphone/product-reviews/B084YWQF5R/](https://www.amazon.com/Huawei-Dual-SIM-Factory-Unlocked-Smartphone/product-reviews/B084YWQF5R/).
+
+Now, the URL looks much more simpler. But actually that URL incorporates the product title (Huawei-Dual-SIM-Factory-Unlocked-Smartphone) and the product code (B084YWQF5R). Amazon only requires the product code. Thus, we can further simplify this URL by deleting the product title: [https://www.amazon.com/product-reviews/B084YWQF5R/](https://www.amazon.com/product-reviews/B084YWQF5R/).
+
+After having simplified the URL, we can check what happens when we go to the next page by clicking the **Next page** button. And by doing so we can spot that now the URL is the following: [https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber=2](https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber=2). A parameter, called pageNumber, with value equal to 2 has been added to the URL (in case that other parameters were added to your URL, you can delete them). Now as a sanity check we can press again the **Next page** button, seeing that the the value of this parameter has changed to 3.
+
+So, it seems that we have already found a way to iterate between the different pages. We only need to paste a page number at the end of the following url: "https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber=".
+
+
+
