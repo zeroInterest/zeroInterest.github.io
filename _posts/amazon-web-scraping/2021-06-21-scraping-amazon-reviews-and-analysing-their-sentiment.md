@@ -86,6 +86,8 @@ First, we extract all the rewview ratings. To do so we use `html_nodes( )` speci
 date <- html_nodes(webpage, ".review-rating") 
 date
 ```
+
+
 <pre><code>## {xml_nodeset (6)}
 {xml_nodeset (12)}
  [1] <i data-hook="review-star-rating-view-point" class= ...
