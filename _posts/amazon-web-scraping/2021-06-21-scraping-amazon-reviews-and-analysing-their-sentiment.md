@@ -112,7 +112,8 @@ review
 ```
  
 <pre><code>
- [1] "5.0 out of 5 stars" "1.0 out of 5 stars" "5.0 out of 5 stars" "5.0 out of 5 stars"
- [5] "5.0 out of 5 stars" "1.0 out of 5 stars" "5.0 out of 5 stars" "3.0 out of 5 stars"
- [9] "4.0 out of 5 stars" "5.0 out of 5 stars" "5.0 out of 5 stars" "5.0 out of 5 stars"
+ [1]  "5.0 out of 5 stars" "1.0 out of 5 stars" "5.0 out of 5 stars"
+ [4]  "5.0 out of 5 stars" "5.0 out of 5 stars" "1.0 out of 5 stars" 
+ [7]  "5.0 out of 5 stars" "3.0 out of 5 stars" "4.0 out of 5 stars"
+ [10] "5.0 out of 5 stars" "5.0 out of 5 stars" "5.0 out of 5 stars"
 </code></pre>
