@@ -62,6 +62,6 @@ After inspecting the page it is obvious that there are a number of classes that 
 
 
 ### Scraping one review page
-Now after understanding the HTML structure of the page, let’s use the `rvest` package, a package that makes it easy to scrape data from HTML web pages, inspired by libraries like [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/).
+Now after understanding the HTML structure of the page, let’s use the `r rvest` package, a package that makes it easy to scrape data from HTML web pages, inspired by libraries like [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/).
 
 
