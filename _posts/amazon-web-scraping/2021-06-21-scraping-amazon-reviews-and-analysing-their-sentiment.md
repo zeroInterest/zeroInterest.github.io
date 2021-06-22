@@ -80,13 +80,13 @@ webpage <- read_html(url)
 
 Now that we have the website’s HTML loaded into R, we can extract whatever we are interested in using the `html_nodes( )` function, in which we specify the object obtained using the `read_html( )` function, i.e. webpage as first argument and then as second argument the tag name, class, or id that we want to extract (remember that the class must have a dot . and ids a hash symbol # preceding their name).
 
-First, we extract all the rewview ratings. To do so we use `html_nodes( )` specifying as second argument the **review-rating** class ".review-rating". And as we can see, we obtain the HTML corresponding to all the elements with this class.
+First, we extract all the review ratings. To do so we use `html_nodes( )` specifying as second argument the **review-rating** class ".review-rating". 
 
 ```r
-date <- html_nodes(webpage, ".review-rating") 
-date
+review <- html_nodes(webpage, ".review-rating") 
+review
 ```
-
+And as we can see, we obtain the HTML code as an xml nodeset corresponding to all the elements with this class:
 
 <pre><code>## {xml_nodeset (6)}
 {xml_nodeset (12)}
@@ -102,4 +102,17 @@ date
 [10] <i data-hook="cmps-review-star-rating" class="a-ico ...
 [11] <i data-hook="cmps-review-star-rating" class="a-ico ...
 [12] <i data-hook="cmps-review-star-rating" class="a-ico ...
+</code></pre>
+
+What we want though is not the entire HTML object but rather the plain text information inside the object. To do this, we can use the `html_text( )` function specifying as first argument the HTML code obtained for the desired elements, i.e. `review` and as second argument `trim = TRUE`. We set trim to TRUE, in order to trim leading and trailing spaces.
+
+```r
+review <- html_text(review, trim = TRUE)
+review
+```
+ 
+<pre><code>
+ [1] "5.0 out of 5 stars" "1.0 out of 5 stars" "5.0 out of 5 stars" "5.0 out of 5 stars"
+ [5] "5.0 out of 5 stars" "1.0 out of 5 stars" "5.0 out of 5 stars" "3.0 out of 5 stars"
+ [9] "4.0 out of 5 stars" "5.0 out of 5 stars" "5.0 out of 5 stars" "5.0 out of 5 stars"
 </code></pre>
