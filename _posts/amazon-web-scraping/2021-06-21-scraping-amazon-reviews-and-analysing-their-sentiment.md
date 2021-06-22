@@ -205,6 +205,7 @@ The above code can be easily adapted to extract reviews of multiple products. To
 
 
 ```r
+product_codes <- c() # product codes of items we want to extract should be specified here
 #final table now has an additional column to store the product code
 final_table <- as.data.frame(matrix(ncol = 4, nrow = 1))
 for (product_code in product_codes) {
@@ -239,4 +240,44 @@ colnames(final_table) <- c("Ratings", "ReviewText", "Date", "ProductCode")
 final_table$ReviewText <- as.character(final_table$ReviewText) 
 ```
 
+### Making the code more reusable
 
+The previous code could be converted into a function for better reusability. Furthermore, we applied an additional change: storing the product name instead of the product code.
+
+```r
+getReviewsFromAmazon <- function(product_codes, product_names = c()){
+  final_table <- matrix(ncol = 4, nrow = 1) #We define two additional columns, one for date and the other for stars
+
+  for (product_code in product_codes) {
+  
+    url <- paste0("https://www.amazon.com/product-reviews/", product_code, "/?pageNumber=")
+    pageNumber <- 1
+    webpage <- read_html(paste0(url, pageNumber))
+    
+    while (length(html_nodes(webpage, ".review")) > 0) {
+      reviews <- html_nodes(webpage, ".review-text-content")
+      reviews <- html_text(reviews, trim = TRUE)
+      date <- html_nodes(webpage, ".review .review-date") #We get the date, we specify 2 classes, because outside of normal reviews there are some dates and this would generate problems
+      date <- html_text(date, trim = TRUE)
+      stars <- html_nodes(webpage, ".review .review-rating") #we do the same for stars
+      stars <- html_text(stars, trim = TRUE)
+      table <- cbind(as.vector(reviews), as.vector(date), as.vector(stars), rep(product_code, length(reviews))) #add extracted date to table also
+      final_table <- rbind(final_table, table)
+      pageNumber <- pageNumber + 1
+      webpage <- read_html(paste0(url, pageNumber))
+    }
+  }
+  
+  final_table <- as.data.frame(final_table)
+  final_table <- final_table[-1,]
+  colnames(final_table) <- c("ReviewText", "Date", "Rating", "ProductCode")
+  final_table$ReviewText <- as.character(final_table$ReviewText) #Text may be read as Factor, so convert it into character
+  final_table$Date <-  gsub(".*on ", "", final_table$Date) #date contains also location information, we remove it
+  final_table$Rating <-  gsub(" out.*", "", final_table$Rating) #Rating is in format x out of 5 stars, we only need x
+  final_table$Rating <- as.numeric(final_table$Rating) #Convert Rating to Numeric
+  final_table$ProductCode <- as.factor(final_table$ProductCode)
+  levels(final_table$ProductCode) <- product_names #Change the product codes to the product names
+  return(final_table)
+}
+
+```
