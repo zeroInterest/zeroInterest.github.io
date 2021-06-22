@@ -40,17 +40,15 @@ Injecting money to the economy is always something controversial. Through the la
 
 This raise on prices can be  already tracked on several indices such as Bloomberg's agriculture index, shown in Figure 5 and also in the annual single-family home price, as shown in Figure 6 (*[Figure 6 Source](https://www.bloomberg.com/news/articles/2021-05-11/u-s-home-prices-surge-the-most-on-record-in-buying-frenzy?sref=RJ2RlMrh)*).
 
-&#x200B;
+{% include image.html url="/assets/img/ad6oocg86vy61.png" description="Figure 5. Bloomberg agriculture index" %}{: class="invertImage"}
+
+{% include image.html url="/assets/img/5oc8mgum6vy61.png" description="Figure 6. Annual Single-family home price" %}{: class="invertImage"}
 
 The appearance of inflation means that interest rates should rise. Something that was already pointed by Janet Yellen at the start of this month:
 
 >**“It may be that interest rates will have to rise somewhat to make sure that our economy doesn’t overheat”**
 
 But what would happen if inflation persists and interest rates have to be risen? Remember that I previously said that stocks are trading at a premium due to the lack of attractive alternative investments. This would no longer be true and this premium would no longer be a thing. And, thus, we should expect a decrease in the stock price.
-
-{% include image.html url="/assets/img/ad6oocg86vy61.png" description="Figure 5. Bloomberg agriculture index" %}{: class="invertImage"}
-
-{% include image.html url="/assets/img/5oc8mgum6vy61.png" description="Figure 6. Annual Single-family home price" %}{: class="invertImage"}
 
 ## The market can not be timed
 
