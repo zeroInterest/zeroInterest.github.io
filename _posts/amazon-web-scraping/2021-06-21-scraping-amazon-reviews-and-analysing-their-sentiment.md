@@ -167,7 +167,8 @@ Thus, the R code to extract all the reviews for the Huawei P40 Lite would be the
 url <- "https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber="
 pageNumber <- 1
 webpage <- read_html(paste0(url, pageNumber))
-#create an empty data frame (later we will have to delete first row as it will be empty)
+#create an empty data frame 
+#(later we will have to delete first row as it will be empty)
 final_table <- as.data.frame(matrix(ncol = 3, nrow = 1))
 
 #while there are elements with "review" class in webpage
@@ -205,12 +206,14 @@ The above code can be easily adapted to extract reviews of multiple products. To
 
 
 ```r
-product_codes <- c() # product codes of items we want to extract should be specified here
+# product codes of items we want to extract should be specified here
+product_codes <- c() 
 #final table now has an additional column to store the product code
 final_table <- as.data.frame(matrix(ncol = 4, nrow = 1))
 for (product_code in product_codes) {
   #URL updates product code by pasting its value
-  url <- paste0("https://www.amazon.com/product-reviews/", product_code, "/?pageNumber=")
+  url <- paste0("https://www.amazon.com/product-reviews/", product_code, 
+         "/?pageNumber=")
   pageNumber <- 1
   webpage <- read_html(paste0(url, pageNumber))
 
