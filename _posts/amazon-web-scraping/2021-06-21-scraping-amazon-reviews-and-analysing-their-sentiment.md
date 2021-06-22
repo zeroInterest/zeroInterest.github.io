@@ -80,40 +80,54 @@ webpage <- read_html(url)
 
 Now that we have the website’s HTML loaded into R, we can extract whatever we are interested in using the `html_nodes( )` function, in which we specify the object obtained using the `read_html( )` function, i.e. webpage as first argument and then as second argument the tag name, class, or id that we want to extract (remember that the class must have a dot . and ids a hash symbol # preceding their name).
 
-First, we extract all the review ratings. To do so we use `html_nodes( )` specifying as second argument the **review-rating** class ".review-rating". 
+First, we extract all the review ratings. To do so we use `html_nodes( )` specifying as second argument the **review** and **review-rating** classes ".review .review-rating". 
 
 ```r
-review <- html_nodes(webpage, ".review-rating") 
-review
+ratings <- html_nodes(webpage, ".review .review-rating") 
+ratings
 ```
 And as we can see, we obtain the HTML code as an xml nodeset corresponding to all the elements with this class:
 
 <pre><code>## {xml_nodeset (6)}
 {xml_nodeset (12)}
- [1] <i data-hook="review-star-rating-view-point" class= ...
- [2] <i data-hook="review-star-rating-view-point" class= ...
- [3] <i data-hook="review-star-rating" class="a-icon a-i ...
- [4] <i data-hook="review-star-rating" class="a-icon a-i ...
- [5] <i data-hook="review-star-rating" class="a-icon a-i ...
- [6] <i data-hook="review-star-rating" class="a-icon a-i ...
- [7] <i data-hook="review-star-rating" class="a-icon a-i ...
- [8] <i data-hook="review-star-rating" class="a-icon a-i ...
- [9] <i data-hook="review-star-rating" class="a-icon a-i ...
-[10] <i data-hook="cmps-review-star-rating" class="a-ico ...
-[11] <i data-hook="cmps-review-star-rating" class="a-ico ...
-[12] <i data-hook="cmps-review-star-rating" class="a-ico ...
+ [1] <i data-hook="review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span class="a- ...
+ [2] <i data-hook="review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span class="a- ...
+ [3] <i data-hook="review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span class="a- ...
+ [4] <i data-hook="review-star-rating" class="a-icon a-icon-star a-star-1 review-rating"><span class="a- ...
+ [5] <i data-hook="review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span class="a- ...
+ [6] <i data-hook="review-star-rating" class="a-icon a-icon-star a-star-3 review-rating"><span class="a- ...
+ [7] <i data-hook="review-star-rating" class="a-icon a-icon-star a-star-4 review-rating"><span class="a- ...
+ [8] <i data-hook="cmps-review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span clas ...
+ [9] <i data-hook="cmps-review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span clas ...
+[10] <i data-hook="cmps-review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span clas ...
 </code></pre>
 
-What we want though is not the entire HTML object but rather the plain text information inside the object. To do this, we can use the `html_text( )` function specifying as first argument the HTML code obtained for the desired elements, i.e. `review` and as second argument `trim = TRUE`. We set trim to TRUE, in order to trim leading and trailing spaces.
+What we want though is not the entire HTML object but rather the plain text information inside the object. To do this, we can use the `html_text( )` function specifying as first argument the HTML code obtained for the desired elements, i.e. `ratings` and as second argument `trim = TRUE`. We set trim to TRUE, in order to trim leading and trailing spaces.
 
 ```r
-review <- html_text(review, trim = TRUE)
-review
+ratings <- html_text(ratings, trim = TRUE)
+ratings
 ```
  
 <pre><code>
- [1]  "5.0 out of 5 stars" "1.0 out of 5 stars" "5.0 out of 5 stars"
- [4]  "5.0 out of 5 stars" "5.0 out of 5 stars" "1.0 out of 5 stars" 
- [7]  "5.0 out of 5 stars" "3.0 out of 5 stars" "4.0 out of 5 stars"
- [10] "5.0 out of 5 stars" "5.0 out of 5 stars" "5.0 out of 5 stars"
+ [1]  "5.0 out of 5 stars" "5.0 out of 5 stars" "5.0 out of 5 stars"
+ [4]  "1.0 out of 5 stars" "5.0 out of 5 stars" "3.0 out of 5 stars" 
+ [7]  "4.0 out of 5 stars" "5.0 out of 5 stars" "5.0 out of 5 stars"
+ [10] "5.0 out of 5 stars" 
 </code></pre>
+
+Awesome, now the output is much clearer, obtaining only what we wanted! Now we will proceed to do the same for the other fields (date and review text).
+
+```r
+reviews <- html_nodes(webpage, ".review .review-text-content")
+reviews <- html_text(reviews, trim = TRUE)
+date <- html_nodes(webpage, ".review .review-date")
+date <- html_text(date, trim = TRUE)
+```
+ 
+Finally, we can add all this information into a data.frame:
+
+```r
+final_table <- data.frame(reviews, date, ratings)
+```
+## Scraping all the pages
