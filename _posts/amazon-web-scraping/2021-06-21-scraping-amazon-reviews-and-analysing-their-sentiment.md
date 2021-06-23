@@ -455,7 +455,7 @@ Below you can see all the code used in this example:
  
 <p>
  
-```r
+~~~r
 library(rvest)
 
 getReviewsFromAmazon <- function(product_codes, product_names = c()){
@@ -555,7 +555,7 @@ ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
   #set name for x-axis
   xlab("Date") + 
   theme_fivethirtyeight()
-```
+~~~
  
  </p>
  
