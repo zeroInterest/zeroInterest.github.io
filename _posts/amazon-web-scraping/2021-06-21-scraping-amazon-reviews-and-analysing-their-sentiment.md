@@ -416,8 +416,8 @@ ggplot(amazonReviews, aes(x = Rating, y = ave_sentiment, group = Rating, fill = 
   theme_fivethirtyeight()
 ```
 
-{% include image.html url="/assets/img/amazon-web-scraping/ratingAndSentiment_dark.png" description="Figure 5. Selecting the Review Text" %}{: class="darkImage"}
-{% include image.html url="/assets/img/amazon-web-scraping/ratingAndSentiment.png" description="Figure 5. Selecting the Review Text" %}{: class="lightImage"}
+{% include image.html url="/assets/img/amazon-web-scraping/ratingAndSentiment_dark.png" description="Figure 8. Selecting the Review Text" %}{: class="darkImage"}
+{% include image.html url="/assets/img/amazon-web-scraping/ratingAndSentiment.png" description="Figure 8. Selecting the Review Text" %}{: class="lightImage"}
 
 As it can be seen, there is some relation between the average sentiment and the review rating. This can be easily seen also by computing the correlation between review rating and the average sentiment `cor(amazonReviews$ave_sentiment, as.numeric(amazonReviews$Rating))` =  0.5070771. Hence, if we did not have information about the score given by each reviewer, we could easily see the average sentiment by looking at the different polarities. This could be pretty useful in cases, in which people give opinion only via text, e.g. twitter.
 
@@ -430,7 +430,7 @@ amazonReviews$Date <- as.Date(as.character(amazonReviews$Date), "%B %d, %Y")
 date_sentiment <- aggregate(ave_sentiment ~ Date + ProductCode, amazonReviews, mean) 
 
 ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
-  geom_smooth(method="loess", size=1, se=T, span = .5) +
+  geom_smooth(method="loess", size=1, se=T, span = .5, colour = "indianred3") +
   #Produce plots per product level, i.e. a new plot for each product
   facet_wrap(~ProductCode) + 
   #plot a grey line at 0, i.e. neutral sentiment
@@ -439,5 +439,8 @@ ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
   ylab("Avg. Sentiment") + 
   #set name for x-axis
   xlab("Date") + 
-  ggtitle("Sentiment of Amazon Reviews over time by Product")
+  theme_fivethirtyeight()
 ```
+
+{% include image.html url="/assets/img/amazon-web-scraping/sentimentOverTime_dark.png" description="Figure 9. Moto G Stylus and Samsung Galaxy S20 Sentiment over Time" %}{: class="darkImage"}
+{% include image.html url="/assets/img/amazon-web-scraping/sentimentOverTime.png" description="Figure 9. Moto G Stylus and Samsung Galaxy S20 Sentiment over Time" %}{: class="lightImage"}
