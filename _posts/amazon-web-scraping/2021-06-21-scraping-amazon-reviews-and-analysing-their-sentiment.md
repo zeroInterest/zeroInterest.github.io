@@ -555,7 +555,7 @@ ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
   #set name for x-axis
   xlab("Date") + 
   theme_fivethirtyeight()
-\```
+```
  
  </p>
  
