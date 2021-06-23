@@ -450,12 +450,12 @@ As we can see in Figure 9 there have been variations among the sentiment of both
 # Code
 Below you can see all the code used in this example:
 
-<details>
-<summary>Click to expand</summary>
+[expand]
+
  
-<p>
+
  
-~~~r
+```r
 library(rvest)
 
 getReviewsFromAmazon <- function(product_codes, product_names = c()){
@@ -555,8 +555,8 @@ ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
   #set name for x-axis
   xlab("Date") + 
   theme_fivethirtyeight()
-~~~
- 
- </p>
- 
-</details>
+```
+ [/expand]
+
+ {% include text-expand.html %}
+
