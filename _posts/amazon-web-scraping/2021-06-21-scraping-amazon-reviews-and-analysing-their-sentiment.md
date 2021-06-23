@@ -6,7 +6,7 @@ date:   2021-06-21 21:00:20 +0100
 tags: data-analysis
 ---
 
-In this post we are going to see how to scrape reviews from Amazon using R. Furthermore, we will see a basic way to extract the sentiment from these reviews also using R.
+This post aims to show the basic ideas of web scraping using an example in which we will extract Amazon reviews. Furthermore, we will automate the extraction of Amazon reviews, by building and R function. Finally, we will use this function to extract reviews for two smartphones: a Moto G Stylus and a Samsung Galaxy S20; doing some basic sentiment analysis, again with R.
 
 # What is web scraping?
 
