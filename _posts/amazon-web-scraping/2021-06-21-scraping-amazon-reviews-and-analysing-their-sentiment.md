@@ -272,7 +272,7 @@ getReviewsFromAmazon <- function(product_codes, product_names = c()){
       date <- html_nodes(webpage, ".review .review-date") 
       date <- html_text(date, trim = TRUE)
       ratings <- html_nodes(webpage, ".review .review-rating")
-      ratings <- html_text(stars, trim = TRUE)
+      ratings <- html_text(ratings, trim = TRUE)
       table <- data.frame(ratings, reviews, date, rep(product_code, 
              length(reviews)))
       final_table <- rbind(final_table, table)
