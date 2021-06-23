@@ -208,6 +208,8 @@ The above code can be easily adapted to extract reviews of multiple products. To
 
 Finally, we also preprocess the extracted date, since it incorporates information about the country in which the product was reviewed and the rating, which is in format X out of 5.0 where we only want X, which is the rating given by the reviewer (a number between 1 and 5).
 
+**Note:** Usually before adapting the code for multiple products it's important to double check that other pages follow the same structure
+
 ```r
 # product codes of items we want to extract should be specified here
 product_codes <- c() 
@@ -305,3 +307,14 @@ getReviewsFromAmazon <- function(product_codes, product_names = c()){
 }
 
 ```
+
+## Extracting Reviews for the Moto G Stylues and the Samsung S20
+
+Now that we have the automatized the scraping process, we are going to gather the reviews for two smartphones: (https://www.amazon.com/dp/B084CVPLLC/)[Moto G Stylus] and (https://www.amazon.com/dp/B08KVGYH6Z/)[Samsung S20]. To do so, we will use the previous function, `getReviewsFromAmazon( )`. This function takes two arguments, the first one is a vector of the product codes to be retrieved and the second one is a vector containing the name of the products. The latter is only for convenience, as displaying the product name (any name can be specified, it is only used for display purposes, not gathering) is more useful than its code. 
+
+```r
+reviews <- getReviewsFromAmazon(c("B084CVPLLC", "B08KVGYH6Z"), c("Moto G Stylus", "Samsung S20"))
+```
+
+{% include image.html url="/assets/img/amazon-web-scraping/ViewScrapedReviews.PNG" description="Figure 7. View of getReviewsFromAmazon() output" %}{: class="invertImage"}
+
