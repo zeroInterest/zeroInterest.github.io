@@ -411,5 +411,7 @@ ggplot(amazonReviews, aes(x = Rating, y = ave_sentiment, group = Rating, fill = 
   ggtitle("Sentiment of the selected Products by Star Rating") 
 ```
 
-{% include image.html url="/assets/img/amazon-web-scraping/ratingAndSentiment.png" description="Figure 8. Moto G Stylus and Samsung S20 Sentiment by Star Rating" %}{: class="invertImage"}
+{% include image.html url="/assets/img/amazon-web-scraping/ratingAndSentiment_dark.png" description="Figure 5. Selecting the Review Text" %}{: class="darkImage"}
+{% include image.html url="/assets/img/amazon-web-scraping/ratingAndSentiment.png" description="Figure 5. Selecting the Review Text" %}{: class="lightImage"}
+
 
