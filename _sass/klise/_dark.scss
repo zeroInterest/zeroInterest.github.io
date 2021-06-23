@@ -58,7 +58,7 @@ body[data-theme="dark"] {
   }
 
   // Syntax
-  .highlight .nf { {
+  code {
     color: #e4e6eb;
     &.highlighter-rouge {
       background-color: $dark-light;
@@ -71,7 +71,7 @@ body[data-theme="dark"] {
     
   }
   
-  nf {
+  .highlight .nf {
     color: palegreen;
   }
 
