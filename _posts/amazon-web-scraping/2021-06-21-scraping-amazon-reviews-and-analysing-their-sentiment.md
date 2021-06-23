@@ -299,8 +299,8 @@ getReviewsFromAmazon <- function(product_codes, product_names = c()){
   #Change the product codes to the product names
   #we use the order and match functions to use the same order
   #as in the function parameter
-  levels(reviews$ProductCode)[order(match(product_codes,
-         levels(reviews$ProductCode)))] <- product_names 
+  levels(final_table$ProductCode)[order(match(product_codes,
+         levels(final_table$ProductCode)))] <- product_names 
   return(final_table)
 }
 
