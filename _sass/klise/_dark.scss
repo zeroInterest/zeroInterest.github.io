@@ -64,6 +64,12 @@ body[data-theme="dark"] {
       background-color: $dark-light;
     }
   }
+  
+  pre {
+    color: #e4e6eb;
+    border-color: rgba(255,255,255,0.1);
+    
+  }
 
   // kbd tag
   kbd {
@@ -272,9 +278,5 @@ body[data-theme="dark"] {
     border-color: rgba(255,255,255,0.1);
     border-left-color: #a0a0a0;
   }
-  .pre {
-    color: #e4e6eb;
-    border-color: rgba(255,255,255,0.1);
-    
-  }
+  
 }
