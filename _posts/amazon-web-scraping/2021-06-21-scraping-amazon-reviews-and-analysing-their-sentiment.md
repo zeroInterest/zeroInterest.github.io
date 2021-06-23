@@ -444,3 +444,115 @@ ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
 
 {% include image.html url="/assets/img/amazon-web-scraping/sentimentOverTime_dark.png" description="Figure 9. Moto G Stylus and Samsung Galaxy S20 Sentiment over Time" %}{: class="darkImage"}
 {% include image.html url="/assets/img/amazon-web-scraping/sentimentOverTime.png" description="Figure 9. Moto G Stylus and Samsung Galaxy S20 Sentiment over Time" %}{: class="lightImage"}
+
+As we can see in Figure 9 there have been variations among the sentiment of both product, while Moto G Stylus has remained steady (or it has even decreased a bit), the Samsung S20 sentiment has increased over time.
+
+# Code
+Below you can see all the code used in this example:
+
+<details>
+<summary>Click this to collapse/fold.</summary>
+
+```r
+library(rvest)
+
+getReviewsFromAmazon <- function(product_codes, product_names = c()){
+#We define two additional columns, one for date and the other for stars
+  final_table <- matrix(ncol = 4, nrow = 1) 
+  for (product_code in product_codes) {
+  
+    url <- paste0("https://www.amazon.com/product-reviews/", product_code, 
+           "/?pageNumber=")
+    pageNumber <- 1
+    webpage <- read_html(paste0(url, pageNumber))
+    
+    while (length(html_nodes(webpage, ".review")) > 0) {
+      reviews <- html_nodes(webpage, ".review-text-content")
+      reviews <- html_text(reviews, trim = TRUE)
+      date <- html_nodes(webpage, ".review .review-date") 
+      date <- html_text(date, trim = TRUE)
+      ratings <- html_nodes(webpage, ".review .review-rating")
+      ratings <- html_text(ratings, trim = TRUE)
+      table <- cbind(ratings, reviews, date, rep(product_code, 
+             length(reviews)))
+      final_table <- rbind(final_table, table)
+      pageNumber <- pageNumber + 1
+      webpage <- read_html(paste0(url, pageNumber))
+    }
+  }
+  
+  final_table <- as.data.frame(final_table)
+  final_table <- final_table[-1,]
+  colnames(final_table) <- c("Rating", "ReviewText", "Date", "ProductCode")
+  #Text may be read as Factor, so convert it into character
+  final_table$ReviewText <- as.character(final_table$ReviewText) 
+  #date contains also location information, we remove it
+  final_table$Date <-  gsub(".*on ", "", final_table$Date) 
+  #Rating is in format x out of 5 stars, we only need x
+  final_table$Rating <-  gsub(" out.*", "", final_table$Rating) 
+  #Convert Rating to Numeric
+  final_table$Rating <- as.numeric(final_table$Rating) 
+  final_table$ProductCode <- as.factor(final_table$ProductCode)
+  #Change the product codes to the product names
+  #we use the order and match functions to use the same order
+  #as in the function parameter
+  levels(final_table$ProductCode)[order(match(product_codes,
+         levels(final_table$ProductCode)))] <- product_names 
+  return(final_table)
+}
+
+amazonReviews <- getReviewsFromAmazon(c("B084CVPLLC", "B08KVGYH6Z"), c("Moto G Stylus", "Samsung S20"))
+
+library(lexicon)
+library(sentimentr)
+library(ggplot2) 
+library("cld3")
+library(ggthemes)
+
+amazonReviews$language <- detect_language(amazonReviews$ReviewText)
+amazonReviews <- amazonReviews[!is.na(amazonReviews$language),]
+amazonReviews <- amazonReviews[amazonReviews$language == "en",]
+sentiment_review <- sentiment_by(amazonReviews$ReviewText, polarity_dt = hash_sentiment_jockers_rinker)
+amazonReviews <- cbind(amazonReviews, sentiment_review[,-1])
+
+
+#Convert rating to factor
+amazonReviews$Rating <- as.factor(amazonReviews$Rating)
+
+#We load the ggthemes package to apply a theme to the plot (optional)
+library(ggthemes)
+
+#specify axis and color vars
+ggplot(amazonReviews, aes(x = Rating, y = ave_sentiment, group = Rating, fill = Rating)) + 
+  #create a boxplot
+  geom_boxplot() +  
+  #Produce plots per product level, i.e. a new plot for each product
+  facet_wrap(~ProductCode) +
+  #plot a grey line at 0, i.e. neutral sentiment
+  geom_hline(yintercept=0, color = "grey") + 
+  #set a name for the y-axis
+  ylab("Avg. Sentiment") +  
+  #set name for the x-axis
+  xlab("Review Star Rating") + 
+  #We set a ggtheme to make the plot look nicer
+  theme_fivethirtyeight()
+  
+  #Convert Date column into date format
+amazonReviews$Date <- as.Date(as.character(amazonReviews$Date), "%B %d, %Y")
+#compute the average sentiment for each date and product
+date_sentiment <- aggregate(ave_sentiment ~ Date + ProductCode, amazonReviews, mean) 
+
+ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
+  geom_smooth(method="loess", size=1, se=T, span = .5, colour = "indianred3") +
+  #Produce plots per product level, i.e. a new plot for each product
+  facet_wrap(~ProductCode) + 
+  #plot a grey line at 0, i.e. neutral sentiment
+  geom_hline(yintercept=0, color = "grey") + 
+   #set a name for the y-axis
+  ylab("Avg. Sentiment") + 
+  #set name for x-axis
+  xlab("Date") + 
+  theme_fivethirtyeight()
+```
+ 
+</details>
