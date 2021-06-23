@@ -310,11 +310,93 @@ getReviewsFromAmazon <- function(product_codes, product_names = c()){
 
 ## Extracting Reviews for the Moto G Stylues and the Samsung S20
 
-Now that we have the automatized the scraping process, we are going to gather the reviews for two smartphones: (https://www.amazon.com/dp/B084CVPLLC/)[Moto G Stylus] and (https://www.amazon.com/dp/B08KVGYH6Z/)[Samsung S20]. To do so, we will use the previous function, `getReviewsFromAmazon( )`. This function takes two arguments, the first one is a vector of the product codes to be retrieved and the second one is a vector containing the name of the products. The latter is only for convenience, as displaying the product name (any name can be specified, it is only used for display purposes, not gathering) is more useful than its code. 
+Now that we have the automatized the scraping process, we are going to gather the reviews for two smartphones: (https://www.amazon.com/dp/B084CVPLLC/)[Moto G Stylus] and (https://www.amazon.com/dp/B08KVGYH6Z/)[Samsung S20]. To do so, we will use the previous function, `getReviewsFromAmazon( )`. This function takes two arguments, the first one is a vector of the product codes to be retrieved and the second one is a vector containing the name of the products. The latter is only for convenience, as displaying the product name (any name can be specified, it is only used for display purposes, not gathering) is more intuitive than its code. 
 
 ```r
-reviews <- getReviewsFromAmazon(c("B084CVPLLC", "B08KVGYH6Z"), c("Moto G Stylus", "Samsung S20"))
+amazonReviews <- getReviewsFromAmazon(c("B084CVPLLC", "B08KVGYH6Z"), c("Moto G Stylus", "Samsung S20"))
 ```
+
+
 
 {% include image.html url="/assets/img/amazon-web-scraping/ViewScrapedReviews.PNG" description="Figure 7. View of getReviewsFromAmazon() output" %}{: class="invertImage"}
 
+# Analyzing the Review Sentiment
+
+Now that we have the data we can proceed to analyze it. First of all we will load the required packages to perform the sentiment analysis. Specifically we will load three packages: (1) `semtimentr`, which provides several functions to calculate text polarity sentiment at the sentence level, allowing also to aggregate by rows or other grouping variables,  (2) `lexicon`, which contains a collection of dictionaries, hash tables and word lists and (3) `ggplot`, a data visualization package.
+
+```r
+library(lexicon)
+library(sentimentr)
+library(ggplot2) 
+```
+
+In order to calculate reviews sentiment, as you may have already inferred by the selection of packages done, we will use a lexicon-based approach, i.e. we will pick a lexicon which already has some polarity scores computed for each word. In this case we decided to pick an extensive dictionary containing 11,710 polarized words comprised in the lexicon package which contains a combined and augmented version of (https://github.com/mjockers/syuzhet)[Jockers 2017] & (https://github.com/mjockers/syuzhet)Rinker’s augmented [Hu & Liu 2004] positive/negative word list. This dictionary is found on the `lexicon` package with the name `hash_sentiment_jockers_rinker`. After this, we use the `sentimentr` package to compute a polarity for the whole review. The `sentimentr` package checks for sentence/instance based polarity in a pretty sophisticated way, taking into account the context, negators and adversative conjunctions. This is achieved by using clusters of words and amplifiers and deamplifiers of polarity. For further information about it you can read its documentation by using the following R command `?sentiment` (if you have not previously loaded the sentimentr package you must use `?sentimentr::sentiment`).
+
+Below you can see the first entries on the `hash_sentiment_jockers_rinker` dictionary:
+
+```r
+head(hash_sentiment_jockers_rinker, 10)
+```
+
+<pre><code>
+##               x     y
+##  1:      a plus  1.00
+##  2:     abandon -0.75
+##  3:   abandoned -0.50
+##  4:   abandoner -0.25
+##  5: abandonment -0.25
+##  6:    abandons -1.00
+##  7:    abducted -1.00
+##  8:   abduction -0.50
+##  9:  abductions -1.00
+## 10:    aberrant -0.60
+</code></pre>
+
+Now, we proceed to compute the polarity of the reviews by using the `sentiment_by( )` function, specifying in it the extracted reviews, `amazonReviews`, and the lexicon that we want to use. As we can see the output of this function is a data.frame with four columns: the element id, the word count of the review, the standard deviation and the average sentiment. 
+
+```r
+sentiment_review <- sentiment_by(amazonReviews$ReviewText, polarity_dt = hash_sentiment_jockers_rinker)
+head(sentiment_review, 10)
+```
+
+<pre><code>
+##  element_id word_count        sd ave_sentiment
+## 1:          1        187 0.3495081    0.14325242
+## 2:          2        257 0.2203865    0.05634736
+## 3:          3        415 0.2059348    0.17135426
+## 4:          4         89        NA   -0.05299989
+## 5:          5        167 0.2237520   -0.01512741
+## 6:          6         15 0.4538694    0.50991635
+## 7:          7         36 0.3557468    0.34036019
+## 8:          8         75 0.4287462    0.55793221
+## 9:          9        240 0.3594667    0.27001047
+##10:         10        531 0.2027678   -0.06652414
+</code></pre>
+
+After that, we proceed to bind its columns (except the first column, `element_id`) to `amazonReviews`.
+
+```r
+amazonReviews <- cbind(amazonReviews, sentiment_review[,-1])
+```
+
+Now, that we got the average sentiment for each review, we proceed to compare this sentiment with the review scores. To do so, we will generate a boxplot per product level (this is easily achieved by using the facet_wrap() function), in which the x-axis corresponds to the review rating and the y-axis corresponds to the previously calculated polarity.
+
+```r
+#Convert rating to factor
+amazonReviews$Rating <- as.factor(amazonReviews$Rating)
+
+#specify axis and color vars
+ggplot(amazonReviews, aes(x = Rating, y = ave_sentiment, group = Rating, fill = Rating)) + 
+  #create a boxplot
+  geom_boxplot() +  
+  #Produce plots per product level, i.e. a new plot for each product
+  facet_wrap(~ProductCode) +
+  #plot a grey line at 0, i.e. neutral sentiment
+  geom_hline(yintercept=0, color = "grey") + 
+  #set a name for the y-axis
+  ylab("Avg. Sentiment") +  
+  #set name for the x-axis
+  xlab("Review Star Rating") + 
+  #set title for the plot
+  ggtitle("Sentiment of the selected Products by Star Rating") 
+```
