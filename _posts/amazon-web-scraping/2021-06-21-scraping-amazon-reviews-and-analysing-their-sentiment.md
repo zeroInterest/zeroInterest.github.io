@@ -450,9 +450,9 @@ As we can see in Figure 9 there have been variations among the sentiment of both
 # Code
 Below you can see all the code used in this example:
 
-{% details Click to expand %}
+{::options parse_block_html="true" /}
 
- 
+<details><summary markdown="span">Click to view code</summary>
 
  
 ```r
@@ -556,7 +556,10 @@ ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
   xlab("Date") + 
   theme_fivethirtyeight()
 ```
- {% enddetails %}
+</details>
+<br/>
+
+{::options parse_block_html="false" /}
 
 
 
