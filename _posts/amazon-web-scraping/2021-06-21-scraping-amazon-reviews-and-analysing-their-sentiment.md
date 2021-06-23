@@ -6,6 +6,8 @@ date:   2021-06-21 21:00:20 +0100
 tags: data-analysis
 ---
 
+In this post we are going to see how to scrape reviews from Amazon using R. Furthermore, we will see a basic way to extract the sentiment from these reviews also using R.
+
 # What is web scraping?
 
 Web scraping consists in systematically collecting information from the Internet. This practice is as old as the internet and there are different techniques to carry it out, being the simplest one the manual copy and paste of information from a web page into a text file or a spreadsheet. Even so, this technique is not the best for quick collection of large amounts of data. Therefore, to collect large volumes of data, techniques that automate this process are used. Generally, these techniques look for patterns that identify what we want to extract. In this example we will use patterns in the HTML structure of the website in order to extract the information we are interested in.
@@ -447,8 +449,11 @@ ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
 
 As we can see in Figure 9 there have been variations among the sentiment of both product, while Moto G Stylus has remained steady (or it has even decreased a bit), the Samsung S20 sentiment has increased over time.
 
-# Code
-Below you can see all the code used in this example:
+# Summary
+
+In this post, we analyzed the HTML structure of the Amazon review pages, in order to automate the retrieval of reviews for different products using R. Furthermore, we saw how to extract the sentiment analysis from this data using the `sentimentr` package.
+
+Below you can find all the code that we used (you can directly copy and paste it to R, in order to replicate everything we did in this exercise):
 
 {::options parse_block_html="true" /}
 
