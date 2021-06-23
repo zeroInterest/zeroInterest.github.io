@@ -358,8 +358,8 @@ Furthermore, as lexicons are language-specific, we will remove these reviews tha
 ```r
 library("cld3")
 amazonReviews$language <- detect_language(amazonReviews$ReviewText)
-amazonReviews <- amazonReviews[!is.na(final_table$language),]
-amazonReviews <- amazonReviews[final_table$language == "en",]
+amazonReviews <- amazonReviews[!is.na(amazonReviews$language),]
+amazonReviews <- amazonReviews[amazonReviews$language == "en",]
 ```
 
 Now, we proceed to compute the polarity of the reviews by using the `sentiment_by( )` function, specifying in it the extracted reviews, `amazonReviews`, and the lexicon that we want to use. As we can see the output of this function is a data.frame with four columns: the element id, the word count of the review, the standard deviation and the average sentiment. 
@@ -410,3 +410,6 @@ ggplot(amazonReviews, aes(x = Rating, y = ave_sentiment, group = Rating, fill = 
   #set title for the plot
   ggtitle("Sentiment of the selected Products by Star Rating") 
 ```
+
+{% include image.html url="/assets/img/amazon-web-scraping/ratingAndSentiment.png" description="Figure 8. Moto G Stylus and Samsung S20 Sentiment by Star Rating" %}{: class="invertImage"}
+
