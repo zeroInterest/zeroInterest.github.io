@@ -424,8 +424,10 @@ As it can be seen, there is some relation between the average sentiment and the 
 Furthermore, since we also retrieved information about the date in which the review was posted. We can also analyze how the average sentiment has changed over time for each product. To do so, we will need to group the different reviews by date and compute the average polarity by date, then we will be able to plot those results. The first thing that we will need to do is to convert date into a correct date format. At the moment date is in character format. This may seem difficult at first, but R has a function which makes it pretty intuitive: `as.Date( )`. In this function a character vector containing dates is specified as a first argument, as a second argument we must specify the format in which the date is written. The format is specified by using letters followed by the percentage sign %. For example full month name is specified as %B, date in numeric form is specified as %d and year with century is specified as %Y (for further information use ?strptime command). In our case the format in which date is found is: full month name day, year with century. Hence we should specify `"%B %d, %Y"` as date format. Once we have converted the date into date format, we can proceed to compute the average sentiment for each day. To do so, we use the aggregate function, which allows to split data into subsets and apply computations tho those subsets. As a first agument, we specify the aggregation that want to create (in this case average sentiment by date and product), as a second the data and as a third the function that we will apply to perfom the aggregation.
 
 ```r
+#Convert Date column into date format
 amazonReviews$Date <- as.Date(as.character(amazonReviews$Date), "%B %d, %Y")
-date_sentiment <- aggregate(ave_sentiment ~ Date + ProductCode, amazonReviews, mean) #compute the average sentiment for each date and product
+#compute the average sentiment for each date and product
+date_sentiment <- aggregate(ave_sentiment ~ Date + ProductCode, amazonReviews, mean) 
 
 ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
   geom_smooth(method="loess", size=1, se=T, span = .5) +
