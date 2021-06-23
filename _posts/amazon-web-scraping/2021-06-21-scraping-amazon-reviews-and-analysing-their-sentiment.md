@@ -352,6 +352,16 @@ head(hash_sentiment_jockers_rinker, 10)
 ## 10:    aberrant -0.60
 </code></pre>
 
+
+Furthermore, as lexicons are language-specific, we will remove these reviews that are not written in english. Here, we could also translate them to english or use different language lexicons. However, for simplicity we remove them. To remove them we use the `cld3` package, which incorporates the `detect_language( )` function, thus creating a new column with the review language and only keeping these reviews that have english as a value in that column.
+
+```r
+library("cld3")
+amazonReviews$language <- detect_language(amazonReviews$ReviewText)
+amazonReviews <- amazonReviews[!is.na(final_table$language),]
+amazonReviews <- amazonReviews[final_table$language == "en",]
+```
+
 Now, we proceed to compute the polarity of the reviews by using the `sentiment_by( )` function, specifying in it the extracted reviews, `amazonReviews`, and the lexicon that we want to use. As we can see the output of this function is a data.frame with four columns: the element id, the word count of the review, the standard deviation and the average sentiment. 
 
 ```r
@@ -379,7 +389,7 @@ After that, we proceed to bind its columns (except the first column, `element_id
 amazonReviews <- cbind(amazonReviews, sentiment_review[,-1])
 ```
 
-Now, that we got the average sentiment for each review, we proceed to compare this sentiment with the review scores. To do so, we will generate a boxplot per product level (this is easily achieved by using the facet_wrap() function), in which the x-axis corresponds to the review rating and the y-axis corresponds to the previously calculated polarity.
+Now, that we got the average sentiment for each review, we proceed to compare this sentiment with the review scores. To do so, we will generate a boxplot per product level (this is easily achieved by using the `facet_wrap( )` function), in which the x-axis corresponds to the review rating and the y-axis corresponds to the previously calculated polarity.
 
 ```r
 #Convert rating to factor
