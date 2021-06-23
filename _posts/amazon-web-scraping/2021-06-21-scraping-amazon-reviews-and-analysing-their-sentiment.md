@@ -159,7 +159,7 @@ To extract all the reviews the first thing we do is to define the URL on which w
 
 The URL that will be used to download the website's HTML is going to be the result of pasting https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber= and the page number (`pageNumber`).
 
-Furthermore, in this case we will need to create a priori an empty data.frame to which we will combine by rows the values of the new variables extracted for each page.
+Furthermore, in this case we will need to create a priori an empty matrix to which we will add the values extracted for each page.
 
 Thus, the R code to extract all the reviews for the Huawei P40 Lite would be the following:
 
@@ -194,7 +194,7 @@ final_table <- as.data.frame(final_table)
 #Remove the first row, which is empty
 final_table <- final_table[-1,]
 #Set Column names
-colnames(final_table) <- c("Ratings", "ReviewText", "Date")
+colnames(final_table) <- c("Rating", "ReviewText", "Date")
 #Text may be read as Factor, so convert it into character
 final_table$ReviewText <- as.character(final_table$ReviewText) 
 ```
@@ -243,7 +243,7 @@ for (product_code in product_codes) {
 
 final_table <- as.data.frame(final_table)
 final_table <- final_table[-1,]
-colnames(final_table) <- c("Ratings", "ReviewText", "Date", "ProductCode")
+colnames(final_table) <- c("Rating", "ReviewText", "Date", "ProductCode")
 #Text may be read as Factor, so convert it into character
 final_table$ReviewText <- as.character(final_table$ReviewText) 
 #date contains also location information, we remove it
@@ -286,7 +286,7 @@ getReviewsFromAmazon <- function(product_codes, product_names = c()){
   
   final_table <- as.data.frame(final_table)
   final_table <- final_table[-1,]
-  colnames(final_table) <- c("Ratings", "ReviewText", "Date", "ProductCode")
+  colnames(final_table) <- c("Rating", "ReviewText", "Date", "ProductCode")
   #Text may be read as Factor, so convert it into character
   final_table$ReviewText <- as.character(final_table$ReviewText) 
   #date contains also location information, we remove it
