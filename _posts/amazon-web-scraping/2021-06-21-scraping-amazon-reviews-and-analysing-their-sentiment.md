@@ -286,7 +286,7 @@ getReviewsFromAmazon <- function(product_codes, product_names = c()){
   
   final_table <- as.data.frame(final_table)
   final_table <- final_table[-1,]
-  colnames(final_table) <- c("ReviewText", "Date", "Rating", "ProductCode")
+  colnames(final_table) <- c("Ratings", "ReviewText", "Date", "ProductCode")
   #Text may be read as Factor, so convert it into character
   final_table$ReviewText <- as.character(final_table$ReviewText) 
   #date contains also location information, we remove it
