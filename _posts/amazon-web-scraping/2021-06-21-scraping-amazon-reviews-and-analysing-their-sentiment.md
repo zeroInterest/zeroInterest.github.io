@@ -126,7 +126,7 @@ date <- html_nodes(webpage, ".review .review-date")
 date <- html_text(date, trim = TRUE)
 ```
  
-Finally, we can add all this information into a data.frame:
+Finally, we can add all this information into a matrix:
 
 ```r
 final_table <- data.frame(reviews, date, ratings)
@@ -169,7 +169,7 @@ pageNumber <- 1
 webpage <- read_html(paste0(url, pageNumber))
 #create an empty data frame 
 #(later we will have to delete first row as it will be empty)
-final_table <- as.data.frame(matrix(ncol = 3, nrow = 1))
+final_table <- matrix(ncol = 3, nrow = 1)
 
 #while there are elements with "review" class in webpage
 while (length(html_nodes(webpage, ".review")) > 0) {
@@ -181,7 +181,7 @@ while (length(html_nodes(webpage, ".review")) > 0) {
   date <- html_nodes(webpage, ".review .review-date")
   date <- html_text(date, trim = TRUE)
   # Add this information to final_table
-  table <- data.frame(ratings, reviews, date)
+  table <- cbind(ratings, reviews, date)
   final_table <- rbind(final_table, table)
   #Increase page Number
   pageNumber <- pageNumber + 1 
@@ -189,6 +189,8 @@ while (length(html_nodes(webpage, ".review")) > 0) {
   webpage <- read_html(paste0(url, pageNumber))
 }
 
+#Convert final table into a data frame
+final_table <- as.data.frame(final_table)
 #Remove the first row, which is empty
 final_table <- final_table[-1,]
 #Set Column names
@@ -210,7 +212,7 @@ Finally, we also preprocess the extracted date, since it incorporates informatio
 # product codes of items we want to extract should be specified here
 product_codes <- c() 
 #final table now has an additional column to store the product code
-final_table <- as.data.frame(matrix(ncol = 4, nrow = 1))
+final_table <- matrix(ncol = 4, nrow = 1)
 for (product_code in product_codes) {
   #URL updates product code by pasting its value
   url <- paste0("https://www.amazon.com/product-reviews/", product_code, 
@@ -228,7 +230,7 @@ for (product_code in product_codes) {
     date <- html_nodes(webpage, ".review .review-date")
     date <- html_text(date, trim = TRUE)
     #Add the product code in the table
-    table <- data.frame(ratings, reviews, date, rep(product_code, 
+    table <- cbind(ratings, reviews, date, rep(product_code, 
              length(reviews)))
     final_table <- rbind(final_table, table)
     #Increase page Number
@@ -239,6 +241,7 @@ for (product_code in product_codes) {
 }
 
 
+final_table <- as.data.frame(final_table)
 final_table <- final_table[-1,]
 colnames(final_table) <- c("Ratings", "ReviewText", "Date", "ProductCode")
 #Text may be read as Factor, so convert it into character
@@ -273,7 +276,7 @@ getReviewsFromAmazon <- function(product_codes, product_names = c()){
       date <- html_text(date, trim = TRUE)
       ratings <- html_nodes(webpage, ".review .review-rating")
       ratings <- html_text(ratings, trim = TRUE)
-      table <- data.frame(ratings, reviews, date, rep(product_code, 
+      table <- cbind(ratings, reviews, date, rep(product_code, 
              length(reviews)))
       final_table <- rbind(final_table, table)
       pageNumber <- pageNumber + 1
