@@ -450,7 +450,7 @@ As we can see in Figure 9 there have been variations among the sentiment of both
 # Code
 Below you can see all the code used in this example:
 
-[expand]
+{% details Click to expand %}
 
  
 
@@ -556,7 +556,8 @@ ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
   xlab("Date") + 
   theme_fivethirtyeight()
 ```
- [/expand]
+ {% enddetails %}
 
- {% include text-expand.html %}
+
+
 
