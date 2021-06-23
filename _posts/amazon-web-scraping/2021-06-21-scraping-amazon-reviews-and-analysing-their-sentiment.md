@@ -451,8 +451,10 @@ As we can see in Figure 9 there have been variations among the sentiment of both
 Below you can see all the code used in this example:
 
 <details>
-<summary>Click this to collapse/fold.</summary>
-
+<summary>Click to expand</summary>
+ 
+<p>
+ 
 ```r
 library(rvest)
 
@@ -553,6 +555,8 @@ ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
   #set name for x-axis
   xlab("Date") + 
   theme_fivethirtyeight()
-```
+\```
+ 
+ </p>
  
 </details>
