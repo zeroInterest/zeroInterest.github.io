@@ -512,7 +512,8 @@ getReviewsFromAmazon <- function(product_codes, product_names = c()){
   return(final_table)
 }
 
-amazonReviews <- getReviewsFromAmazon(c("B084CVPLLC", "B08KVGYH6Z"), c("Moto G Stylus", "Samsung S20"))
+amazonReviews <- getReviewsFromAmazon(c("B084CVPLLC", "B08KVGYH6Z"),
+                                      c("Moto G Stylus", "Samsung S20"))
 
 library(lexicon)
 library(sentimentr)
@@ -523,7 +524,8 @@ library(ggthemes)
 amazonReviews$language <- detect_language(amazonReviews$ReviewText)
 amazonReviews <- amazonReviews[!is.na(amazonReviews$language),]
 amazonReviews <- amazonReviews[amazonReviews$language == "en",]
-sentiment_review <- sentiment_by(amazonReviews$ReviewText, polarity_dt = hash_sentiment_jockers_rinker)
+sentiment_review <- sentiment_by(amazonReviews$ReviewText,
+                                 polarity_dt = hash_sentiment_jockers_rinker)
 amazonReviews <- cbind(amazonReviews, sentiment_review[,-1])
 
 
