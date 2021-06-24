@@ -378,17 +378,14 @@ pre.highlight > button {
 
 pre.highlight:hover > button {
   opacity: 1;
-  --copy-code-bg-color: var(--color-black-25);
-  --copy-code-text-color: var(--color-black-90);
-  color: var(--copy-code-text-color);
-  background-color: var(--copy-code-bg-color);
+  color: #EEEEFC;
+  background-color: #757579;
 }
 
 pre.highlight > button:active,
 pre.highlight > button:focus {
   opacity: 1;
-  --copy-code-bg-color: var(--color-black-25);
-  --copy-code-text-color: var(--color-black-90);
-  color: var(--copy-code-text-color);
-  background-color: var(--copy-code-bg-color);
+  
+  color: #EEEEFC;
+  background-color: #757579;
 }
