@@ -465,7 +465,6 @@ Below you can find all the code that we used (you can directly copy and paste it
  
 {::options parse_block_html="false" /}
 {% include codeHeader.html %}
-{::options parse_block_html="true" /}
 ```r
 library(rvest)
 
