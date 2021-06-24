@@ -367,7 +367,8 @@ amazonReviews <- amazonReviews[amazonReviews$language == "en",]
 Now, we proceed to compute the polarity of the reviews by using the `sentiment_by( )` function, specifying in it the extracted reviews, `amazonReviews`, and the lexicon that we want to use. As we can see the output of this function is a data.frame with four columns: the element id, the word count of the review, the standard deviation and the average sentiment. 
 
 ```r
-sentiment_review <- sentiment_by(amazonReviews$ReviewText, polarity_dt = hash_sentiment_jockers_rinker)
+sentiment_review <- sentiment_by(amazonReviews$ReviewText,
+                       polarity_dt = hash_sentiment_jockers_rinker)
 head(sentiment_review, 10)
 ```
 
@@ -530,7 +531,8 @@ amazonReviews$Rating <- as.factor(amazonReviews$Rating)
 library(ggthemes)
 
 #specify axis and color vars
-ggplot(amazonReviews, aes(x = Rating, y = ave_sentiment, group = Rating, fill = Rating)) + 
+ggplot(amazonReviews, aes(x = Rating, y = ave_sentiment, 
+        group = Rating, fill = Rating)) + 
   #create a boxplot
   geom_boxplot() +  
   #Produce plots per product level, i.e. a new plot for each product
@@ -547,7 +549,8 @@ ggplot(amazonReviews, aes(x = Rating, y = ave_sentiment, group = Rating, fill = 
   #Convert Date column into date format
 amazonReviews$Date <- as.Date(as.character(amazonReviews$Date), "%B %d, %Y")
 #compute the average sentiment for each date and product
-date_sentiment <- aggregate(ave_sentiment ~ Date + ProductCode, amazonReviews, mean) 
+date_sentiment <- aggregate(ave_sentiment ~ Date + ProductCode,
+                           amazonReviews, mean) 
 
 ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
   geom_smooth(method="loess", size=1, se=T, span = .5, colour = "indianred3") +
