@@ -459,11 +459,13 @@ In this post, we analyzed the HTML structure of the Amazon review pages, in orde
 
 Below you can find all the code that we used (you can directly copy and paste it to R, in order to replicate everything we did in this exercise):
 
-{::options parse_block_html="true" /}
+
 
 <details><summary markdown="span">Click to view code</summary>
 
+
 {% include codeHeader.html %}
+{::options parse_block_html="true" /}
 ```r
 library(rvest)
 
