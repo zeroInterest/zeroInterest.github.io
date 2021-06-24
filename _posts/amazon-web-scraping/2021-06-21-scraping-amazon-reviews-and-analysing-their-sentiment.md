@@ -463,7 +463,7 @@ Below you can find all the code that we used (you can directly copy and paste it
 
 <details><summary markdown="span">Click to view code</summary>
 
- 
+{% include codeHeader.html %}
 ```r
 library(rvest)
 
