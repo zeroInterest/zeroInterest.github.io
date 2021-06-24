@@ -66,12 +66,14 @@ After inspecting the page it is obvious that there are a number of classes that 
 ## Scraping the first review page
 Now after understanding the HTML structure of the page, let’s use the `rvest` package, a package that makes it easy to scrape data from HTML web pages, inspired by libraries like [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/).
 
+{% include codeHeader.html %}
 ```r
 library(rvest)
 ```
 
 First, we retrieve the HTML code of the website and load it into R. To do so we can use the `read_html( )` function, specifying the website url as a parameter.
 
+{% include codeHeader.html %}
 ```r
 # Specify the website URL
 url <- "https://www.amazon.com/Huawei-Dual-SIM-Factory-Unlocked-Smartphone/product-reviews/B084YWQF5R/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews" 
@@ -84,6 +86,7 @@ Now that we have the website’s HTML loaded into R, we can extract whatever we 
 
 First, we extract all the review ratings. To do so we use `html_nodes( )` specifying as second argument the **review** and **review-rating** classes ".review .review-rating". 
 
+{% include codeHeader.html %}
 ```r
 ratings <- html_nodes(webpage, ".review .review-rating") 
 ratings
@@ -107,6 +110,7 @@ And as we can see, we obtain the HTML code as an xml nodeset corresponding to al
 
 What we want though is not the entire HTML object but rather the plain text information inside the object. To do this, we can use the `html_text( )` function specifying as first argument the HTML code obtained for the desired elements, i.e. `ratings` and as second argument `trim = TRUE`. We set trim to TRUE, in order to trim leading and trailing spaces.
 
+{% include codeHeader.html %}
 ```r
 ratings <- html_text(ratings, trim = TRUE)
 ratings
@@ -121,6 +125,7 @@ ratings
 
 Awesome, now the output is much clearer, obtaining only what we wanted! Now we will proceed to do the same for the other fields (date and review text).
 
+{% include codeHeader.html %}
 ```r
 reviews <- html_nodes(webpage, ".review .review-text-content")
 reviews <- html_text(reviews, trim = TRUE)
@@ -130,6 +135,7 @@ date <- html_text(date, trim = TRUE)
  
 Finally, we can add all this information into a matrix:
 
+{% include codeHeader.html %}
 ```r
 final_table <- data.frame(reviews, date, ratings)
 ```
@@ -165,6 +171,7 @@ Furthermore, in this case we will need to create a priori an empty matrix to whi
 
 Thus, the R code to extract all the reviews for the Huawei P40 Lite would be the following:
 
+{% include codeHeader.html %}
 ```r
 url <- "https://www.amazon.com/product-reviews/B084YWQF5R/pageNumber="
 pageNumber <- 1
@@ -212,6 +219,7 @@ Finally, we also preprocess the extracted date, since it incorporates informatio
 
 **Note:** Usually before adapting the code for multiple products it's important to double check that other pages follow the same structure
 
+{% include codeHeader.html %}
 ```r
 # product codes of items we want to extract should be specified here
 product_codes <- c() 
@@ -262,6 +270,7 @@ final_table$Rating <- as.numeric(final_table$Rating)
 
 The previous code could be converted into a function for better reusability. Furthermore, we applied an additional change: storing the product name instead of the product code.
 
+{% include codeHeader.html %}
 ```r
 getReviewsFromAmazon <- function(product_codes, product_names = c()){
 #We define two additional columns, one for date and the other for stars
@@ -314,6 +323,7 @@ getReviewsFromAmazon <- function(product_codes, product_names = c()){
 
 Now that we have the automatized the scraping process, we are going to gather the reviews for two smartphones: (https://www.amazon.com/dp/B084CVPLLC/)[Moto G Stylus] and (https://www.amazon.com/dp/B08KVGYH6Z/)[Samsung S20]. To do so, we will use the previous function, `getReviewsFromAmazon( )`. This function takes two arguments, the first one is a vector of the product codes to be retrieved and the second one is a vector containing the name of the products. The latter is only for convenience, as displaying the product name (any name can be specified, it is only used for display purposes, not gathering) is more intuitive than its code. 
 
+{% include codeHeader.html %}
 ```r
 amazonReviews <- getReviewsFromAmazon(c("B084CVPLLC", "B08KVGYH6Z"),
                                       c("Moto G Stylus", "Samsung S20"))
@@ -327,6 +337,7 @@ amazonReviews <- getReviewsFromAmazon(c("B084CVPLLC", "B08KVGYH6Z"),
 
 Now that we have the data we can proceed to analyze it. First of all we will load the required packages to perform the sentiment analysis. Specifically we will load three packages: (1) `semtimentr`, which provides several functions to calculate text polarity sentiment at the sentence level, allowing also to aggregate by rows or other grouping variables,  (2) `lexicon`, which contains a collection of dictionaries, hash tables and word lists and (3) `ggplot`, a data visualization package.
 
+{% include codeHeader.html %}
 ```r
 library(lexicon)
 library(sentimentr)
@@ -337,6 +348,7 @@ In order to calculate reviews sentiment, as you may have already inferred by the
 
 Below you can see the first entries on the `hash_sentiment_jockers_rinker` dictionary:
 
+{% include codeHeader.html %}
 ```r
 head(hash_sentiment_jockers_rinker, 10)
 ```
@@ -358,6 +370,7 @@ head(hash_sentiment_jockers_rinker, 10)
 
 Furthermore, as lexicons are language-specific, we will remove these reviews that are not written in english. Here, we could also translate them to english or use different language lexicons. However, for simplicity we remove them. To remove them we use the `cld3` package, which incorporates the `detect_language( )` function, thus creating a new column with the review language and only keeping these reviews that have english as a value in that column.
 
+{% include codeHeader.html %}
 ```r
 library("cld3")
 amazonReviews$language <- detect_language(amazonReviews$ReviewText)
@@ -367,6 +380,7 @@ amazonReviews <- amazonReviews[amazonReviews$language == "en",]
 
 Now, we proceed to compute the polarity of the reviews by using the `sentiment_by( )` function, specifying in it the extracted reviews, `amazonReviews`, and the lexicon that we want to use. As we can see the output of this function is a data.frame with four columns: the element id, the word count of the review, the standard deviation and the average sentiment. 
 
+{% include codeHeader.html %}
 ```r
 sentiment_review <- sentiment_by(amazonReviews$ReviewText,
                        polarity_dt = hash_sentiment_jockers_rinker)
@@ -396,7 +410,7 @@ amazonReviews <- cbind(amazonReviews, sentiment_review[,-1])
 Now, that we got the average sentiment for each review, we proceed to compare this sentiment with the review scores. To do so, we will generate a boxplot per product level (this is easily achieved by using the `facet_wrap( )` function), in which the x-axis corresponds to the review rating and the y-axis corresponds to the previously calculated polarity.
 
 
-
+{% include codeHeader.html %}
 ```r
 #Convert rating to factor
 amazonReviews$Rating <- as.factor(amazonReviews$Rating)
@@ -428,6 +442,7 @@ As it can be seen, there is some relation between the average sentiment and the 
 
 Furthermore, since we also retrieved information about the date in which the review was posted. We can also analyze how the average sentiment has changed over time for each product. To do so, we will need to group the different reviews by date and compute the average polarity by date, then we will be able to plot those results. The first thing that we will need to do is to convert date into a correct date format. At the moment date is in character format. This may seem difficult at first, but R has a function which makes it pretty intuitive: `as.Date( )`. In this function a character vector containing dates is specified as a first argument, as a second argument we must specify the format in which the date is written. The format is specified by using letters followed by the percentage sign %. For example full month name is specified as %B, date in numeric form is specified as %d and year with century is specified as %Y (for further information use ?strptime command). In our case the format in which date is found is: full month name day, year with century. Hence we should specify `"%B %d, %Y"` as date format. Once we have converted the date into date format, we can proceed to compute the average sentiment for each day. To do so, we use the aggregate function, which allows to split data into subsets and apply computations tho those subsets. As a first agument, we specify the aggregation that want to create (in this case average sentiment by date and product), as a second the data and as a third the function that we will apply to perfom the aggregation.
 
+{% include codeHeader.html %}
 ```r
 #Convert Date column into date format
 amazonReviews$Date <- as.Date(as.character(amazonReviews$Date), "%B %d, %Y")
