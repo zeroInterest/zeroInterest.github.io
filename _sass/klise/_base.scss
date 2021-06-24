@@ -383,4 +383,8 @@ pre.highlight:hover > button {
 pre.highlight > button:active,
 pre.highlight > button:focus {
   opacity: 1;
+  --copy-code-bg-color: var(--color-black-25);
+  --copy-code-text-color: var(--color-black-90);
+  color: var(--copy-code-text-color);
+  background-color: var(--copy-code-bg-color);
 }
