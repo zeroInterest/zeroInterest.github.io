@@ -333,7 +333,7 @@ library(sentimentr)
 library(ggplot2) 
 ```
 
-In order to calculate reviews sentiment, as you may have already inferred by the selection of packages done, we will use a lexicon-based approach, i.e. we will pick a lexicon which already has some polarity scores computed for each word. In this case we decided to pick an extensive dictionary containing 11,710 polarized words comprised in the lexicon package which contains a combined and augmented version of (https://github.com/mjockers/syuzhet)[Jockers 2017] & (https://github.com/mjockers/syuzhet)Rinker’s augmented [Hu & Liu 2004] positive/negative word list. This dictionary is found on the `lexicon` package with the name `hash_sentiment_jockers_rinker`. After this, we use the `sentimentr` package to compute a polarity for the whole review. The `sentimentr` package checks for sentence/instance based polarity in a pretty sophisticated way, taking into account the context, negators and adversative conjunctions. This is achieved by using clusters of words and amplifiers and deamplifiers of polarity. For further information about it you can read its documentation by using the following R command `?sentiment` (if you have not previously loaded the sentimentr package you must use `?sentimentr::sentiment`).
+In order to calculate reviews sentiment, as you may have already inferred by the selection of packages done, we will use a lexicon-based approach, i.e. we will pick a lexicon which already has some polarity scores computed for each word. In this case we decided to pick an extensive dictionary containing 11,710 polarized words comprised in the lexicon package which contains a combined and augmented version of [Jockers 2017](https://github.com/mjockers/syuzhet)[Jockers 2017] & Rinker’s augmented [Hu & Liu 2004](https://dl.acm.org/doi/10.1145/1014052.1014073) positive/negative word list. This dictionary is found on the `lexicon` package with the name `hash_sentiment_jockers_rinker`. After this, we use the `sentimentr` package to compute a polarity for the whole review. The `sentimentr` package checks for sentence/instance based polarity in a pretty sophisticated way, taking into account the context, negators and adversative conjunctions. This is achieved by using clusters of words and amplifiers and deamplifiers of polarity. For further information about it you can read its documentation by using the following R command `?sentiment` (if you have not previously loaded the sentimentr package you must use `?sentimentr::sentiment`).
 
 Below you can see the first entries on the `hash_sentiment_jockers_rinker` dictionary:
 
@@ -405,7 +405,8 @@ amazonReviews$Rating <- as.factor(amazonReviews$Rating)
 library(ggthemes)
 
 #specify axis and color vars
-ggplot(amazonReviews, aes(x = Rating, y = ave_sentiment, group = Rating, fill = Rating)) + 
+ggplot(amazonReviews, aes(x = Rating, y = ave_sentiment,
+       group = Rating, fill = Rating)) + 
   #create a boxplot
   geom_boxplot() +  
   #Produce plots per product level, i.e. a new plot for each product
@@ -431,7 +432,8 @@ Furthermore, since we also retrieved information about the date in which the rev
 #Convert Date column into date format
 amazonReviews$Date <- as.Date(as.character(amazonReviews$Date), "%B %d, %Y")
 #compute the average sentiment for each date and product
-date_sentiment <- aggregate(ave_sentiment ~ Date + ProductCode, amazonReviews, mean) 
+date_sentiment <- aggregate(ave_sentiment ~ Date + ProductCode,
+                            amazonReviews, mean) 
 
 ggplot(date_sentiment, aes(x = Date, y = ave_sentiment)) +
   geom_smooth(method="loess", size=1, se=T, span = .5, colour = "indianred3") +
