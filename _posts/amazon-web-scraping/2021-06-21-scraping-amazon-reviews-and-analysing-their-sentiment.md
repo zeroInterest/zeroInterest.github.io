@@ -315,7 +315,8 @@ getReviewsFromAmazon <- function(product_codes, product_names = c()){
 Now that we have the automatized the scraping process, we are going to gather the reviews for two smartphones: (https://www.amazon.com/dp/B084CVPLLC/)[Moto G Stylus] and (https://www.amazon.com/dp/B08KVGYH6Z/)[Samsung S20]. To do so, we will use the previous function, `getReviewsFromAmazon( )`. This function takes two arguments, the first one is a vector of the product codes to be retrieved and the second one is a vector containing the name of the products. The latter is only for convenience, as displaying the product name (any name can be specified, it is only used for display purposes, not gathering) is more intuitive than its code. 
 
 ```r
-amazonReviews <- getReviewsFromAmazon(c("B084CVPLLC", "B08KVGYH6Z"), c("Moto G Stylus", "Samsung S20"))
+amazonReviews <- getReviewsFromAmazon(c("B084CVPLLC", "B08KVGYH6Z"),
+                                      c("Moto G Stylus", "Samsung S20"))
 ```
 
 
