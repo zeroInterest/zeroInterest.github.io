@@ -65,15 +65,6 @@ body[data-theme="dark"] {
     }
   }
   
-  pre {
-    color: #e4e6eb;
-    border-color: rgba(255,255,255,0.1);
-    
-  }
-  
-  .highlight .nf {
-    color: palegreen;
-  }
 
   // kbd tag
   kbd {
@@ -277,10 +268,6 @@ body[data-theme="dark"] {
     }
   }
   
-  .highlight > pre {
-    background-image: linear-gradient( rgba(255,255,255,0.04), rgba(255,255,255,0.04) 1.5em, rgba(255,255,255,0.03) 1.5em, rgba(255,255,255,0.03) 3em);
-    border-color: rgba(255,255,255,0.2);
-    border-left-color: #a0a0a0;
-  }
+
   
 }
