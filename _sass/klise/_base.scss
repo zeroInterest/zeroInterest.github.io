@@ -378,7 +378,7 @@ pre.highlight > button {
 
 pre.highlight:hover > button {
   opacity: 1;
-  transition-delay: 0.4s;
+  
   color: #EEEEFC;
   background-color: #303447;
 }
@@ -386,7 +386,7 @@ pre.highlight:hover > button {
 pre.highlight > button:active,
 pre.highlight > button:focus {
   opacity: 1;
-  transition-delay: 0.2s;
+  
   color: #EEEEFC;
   background-color: #303447;
 }
