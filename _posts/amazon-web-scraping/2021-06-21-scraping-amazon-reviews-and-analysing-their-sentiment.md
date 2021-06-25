@@ -60,7 +60,7 @@ By checking the classes of these elements, we can see that there are some pretty
 ### Setting the pattern
 After inspecting the page it is obvious that there are a number of classes that define exactly the elements we are interested in. In addition, these classes are very descriptive, making them easy to identify. Thus, whole reviews can be identified with the **review** class, review's ratings can be identified with the **review-rating** class, review's dates can be identified with the **review-date** and review's texts can be identified with the **review-text** class. Figure 6 visually depicts the classes that uniquely identify the elements we are interested in. Therefore, we can extract all this information by extracting the elements containing these classes.
 
-{% include image.html url="/assets/img/amazon-web-scraping/schematic.png" description="Figure 6. Schematic Structure" %}{: class="invertImage"}
+{% include image.html url="/assets/img/amazon-web-scraping/schematic.png" description="Figure 6. Schematic Structure of the classes used to identify the different elements of interest" %}{: class="invertImage"}
 
 # Scraping Reviews with R
 ## Scraping the first review page
@@ -364,6 +364,8 @@ amazonReviews$language <- detect_language(amazonReviews$ReviewText)
 amazonReviews <- amazonReviews[!is.na(amazonReviews$language),]
 amazonReviews <- amazonReviews[amazonReviews$language == "en",]
 ```
+
+**Note:** The `detect_language( )` function is not perfect, it does not work pretty well for short texts, especially texts containing one or two words. This is due to the fact that this function only outputs one language, and some words are written in the same way way in different languages. For example "excellent" is written in the same way in english and french.
 
 Now, we proceed to compute the polarity of the reviews by using the `sentiment_by( )` function, specifying in it the extracted reviews, `amazonReviews`, and the lexicon that we want to use. As we can see the output of this function is a data.frame with four columns: the element id, the word count of the review, the standard deviation and the average sentiment. 
 
