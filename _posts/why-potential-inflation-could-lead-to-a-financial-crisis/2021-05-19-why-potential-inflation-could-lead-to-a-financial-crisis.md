@@ -20,7 +20,7 @@ Moreover, these economic disturbances led governments to act severely. Keynesian
 
 ## Stocks as the only attractive investment vehicle
 
-Such a long period of low interest rates inflated stock prices. Figure 3, shows how cyclically adjusted S&P 500 price-to-earnings ratio has been rising during the last decade, being quite high in comparison to other periods of time (specially before the dot-com bubble). Stock prices started trading at a premium, because there were no attractive alternative investments, this channelled much of the liquidity into equities (bonds with almost no interest or even negative interests were not an attractive investment anymore). Hence, low interest rates justify high stock prices, since stocks are highly attractive relative to bonds.
+Such a long period of low interest rates inflated stock prices. Figure 3, shows how cyclically adjusted S&P 500 price-to-earnings ratio has been rising during the last decade, being quite high in comparison to other periods of time (specially before the dot-com bubble). Stock prices started trading at a premium, because there were no attractive alternative investments, this channelled much of the liquidity into equities (bonds with almost no interest or even negative interests were not an attractive investment anymore). Moreover, this low interest rate setting has prompted greater investor leverage, due to its low cost. Hence, low interest rates justify high stock prices, since stocks are highly attractive relative to bonds.
 
 {% include image.html url="/assets/img/why-potential-inflation-could-lead-to-a-financial-crisis/9al89cizwuy61.png" description="Figure 3. Cyclically adjusted S&P 500 price-to-earnings rations" %}{: class="invertImage"}
 
