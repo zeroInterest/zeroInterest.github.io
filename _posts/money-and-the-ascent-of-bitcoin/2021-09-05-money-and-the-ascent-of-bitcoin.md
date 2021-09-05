@@ -133,6 +133,7 @@ Therefore, as bitcoin does not generate cash flows, i.e., the mere fact of ownin
 But, according to Taleb, Bitcoin is a technology. Therefore, Bitcoin, like any other technology, will eventually be replaced by another. As a result, its terminal value will be 0. Consequently, Taleb argues that since its fundamental value is 0, Bitcoin will not become money.
 
 Nevertheless, in this argument, Taleb avoids two important points: (1) humans are not completely rational, and (2) Bitcoin is in the process of becoming a store of value as we saw in the previous subsection. Taleb's argument may have been valid at earlier stages in the development of Bitcoin's store of value function. Hence, an origin irrationality, i. e., the extensive acquisition of bitcoin despite a fundamental value equal to 0, has caused bitcoin to develop its function as a store of value.
+
 Such a fact is critical since assets that act as a store of value provide the holder with a service: the transfer of value in space and time. Consequently, this implies that the expected flows of bitcoin are not zero, but the implicit value of this service. Therefore, Bitcoin's fundamental value should be greater than 0.
 
 
