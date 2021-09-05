@@ -56,9 +56,7 @@ Throughout history, money has taken many forms. Although today fiat money is the
 
 Commodity money refers to real units of a specific commodity universally accepted as a counterpart for goods and services. Accordingly, commodity money has intrinsic value. Historically, a myriad of commodities has served at one time or another as a medium of exchange: animal skins, salt, barley, tea, gold, silver, tobacco, etc.
 
-As economies became more complex, increasing the number of payments, commodity money became cumbersome. The quality of the metals was continually tested to ensure that they had not been tampered with or that they were not of a lower grade than assumed. On the other hand, agricultural products were relatively difficult to transport compared to metals because of their lower unit value.
-
-For this reason, two alternatives emerged that sought to solve these problems: coinage and representative money.
+As economies became more complex, increasing the number of payments, commodity money became cumbersome. The quality of the metals was continually tested to ensure that they had not been tampered with or that they were not of a lower grade than assumed. On the other hand, agricultural products were relatively difficult to transport compared to metals because of their lower unit value. For this reason, two alternatives emerged that sought to solve these problems: coinage and representative money.
 
 Coinage was a revolutionary invention that changed people's way of thought. Coinage seems to have first occurred in the Kingdom of Lydia around 600 BC when the first electrum coins were minted, a natural alloy of gold and silver. (recent findings suggest that coinage may have originated in China a few years earlier, near Guanzhuang in Henan province).
 Consequently, metallic coins are a type of commodity money, which is highly transportable and divisible. Moreover, minted coins contained a mark that guaranteed their weight and purity, i.e., their value, thus solving the uniformity problem that untreated metals faced.
@@ -76,9 +74,7 @@ Fiat money refers to money that has no intrinsic value and does not represent an
 
 Some authors have defined state-issued fiat money more critically as credit reimbursable for the payment of future tax obligations. And, therefore, associating fiat money as a way of using a government's liabilities as a store of value.
 
-In 1971, following the end of the Bretton Woods agreement, we find the emergence of modern fiat money.
-
-Nevertheless, in the fifth century B.C in Carthage, we already find one of the earliest known forms of widespread use of fiat money. This money was a small piece of leather sealed by the state, which enveloped a mysterious substance that nobody knew its composition except the maker. Only by breaking the seal, its composition could be known. However, in the presence of this event, this money was considered worthless.
+In 1971, following the end of the Bretton Woods agreement, we find the emergence of modern fiat money. Nevertheless, in the fifth century B.C in Carthage, we already find one of the earliest known forms of widespread use of fiat money. This money was a small piece of leather sealed by the state, which enveloped a mysterious substance that nobody knew its composition except the maker. Only by breaking the seal, its composition could be known. However, in the presence of this event, this money was considered worthless.
 
 Recent studies have speculated that the mysterious substance was, in fact, tin or a compound of copper and tin and that the wrapping of this compound was not leather, but parchment.
 
@@ -107,9 +103,7 @@ Before we can say whether bitcoin is money or not, we must first analyze whether
 
 As of today, Bitcoin is not a generalized medium of exchange. We cannot go to the bakery next to our house and buy bread with it, nor can we go to a car dealership and buy a car with it. Moreover,  Bitcoin has high price volatility, which neither favors it as a store of value nor as a unit of account. 
 
-Thus, we can say that bitcoin currently cannot be considered money. However, bitcoin meets all the necessary characteristics required to fulfill these functions. As a digital asset, it is extensively portable, being its transferability and accumulation easy. In addition, it is deeply divisible: one bitcoin can be divided into 100 million units, commonly known as satoshis.  Likewise, the digital nature of bitcoins makes them uniform and durable.
-
-And that leads to a more complex question: is bitcoin in the process of becoming money?
+Thus, we can say that bitcoin currently cannot be considered money. However, bitcoin meets all the necessary characteristics required to fulfill these functions. As a digital asset, it is extensively portable, being its transferability and accumulation easy. In addition, it is deeply divisible: one bitcoin can be divided into 100 million units, commonly known as satoshis.  Likewise, the digital nature of bitcoins makes them uniform and durable. And that leads to a more complex question: is bitcoin in the process of becoming money?
 
 In the beginning, Bitcoin had a highly volatile price, as it was a new, virtually unknown asset that very few people owned. Nevertheless, Bitcoin was an asset with quite appealing monetary properties, coupled with a decentralized scheme and a finite money supply.
 
