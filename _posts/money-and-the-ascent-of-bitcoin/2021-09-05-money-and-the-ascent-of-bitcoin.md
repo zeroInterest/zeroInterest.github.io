@@ -129,6 +129,8 @@ Finally, if Bitcoin's function as a medium of exchange were to develop, it would
 
 Therefore, we can say that Bitcoin is currently in the process of becoming a store of value. That said, whether such a function is widely recognized depends on the maintenance of the trend in which it is now present: further decrease in its downward volatility without giving up its current popularity. Moreover, the development of other functions as a generalized medium of exchange and unit of account is still a long way off and is conditional on the soundness of the development of the store of value function.
 
+Recently, Taleb has argued that Bitcoin can never be a store of value, since its fundamental value is 0. In the next subsection we address this criticism.
+
 ## From Irrationality to Fundamental Value: The importance of becoming a store of value 
 
 In the summer of 2021, Nassim Taleb published a short article entitled [Bitcoin, currencies, and fragility](https://www.tandfonline.com/doi/full/10.1080/14697688.2021.1952702), in which one of his arguments is that the value of Bitcoin is exactly 0 and, therefore, Bitcoin cannot be a store of value.  
