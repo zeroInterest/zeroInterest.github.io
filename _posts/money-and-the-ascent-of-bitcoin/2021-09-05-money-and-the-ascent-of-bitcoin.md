@@ -144,3 +144,18 @@ Nevertheless, in this argument, Taleb avoids two important points: (1) humans ar
 Such a fact is critical since assets that act as a store of value provide the holder with a service: the transfer of value in space and time. Consequently, this implies that the expected flows of bitcoin are not zero, but the implicit value of this service. Therefore, Bitcoin's fundamental value should be greater than 0.
 
 
+# Key Takeaways
+
+* Money can be defined as a generally accepted medium of exchange.
+* Ideally, money should also act as a store of value and a unit of account.
+* Thus money has three main functions: (1) generally accepted medium of exchange, (2) store of value, (3) unit of account.
+* A good becomes money through a process by which it usually acquires some of these functions first, and then others are subsequently developed.
+* Not all goods can become money. They must meet specific characteristics to fulfill these functions: (1) Portability, (2) Divisibility, (3) Uniformity, and (4) Durability.
+* Bitcoin was born in 2008 as a revolutionary means of payment since it was decentralized and pseudo-anonymous.
+* Bitcoin has a known and finite monetary supply. Furthermore, it meets all the specific characteristics that money should fulfill: it is portable, divisible, uniform, and durable.
+* Bitcoin does not currently serve any of the functions that money should have: it is not used as a general means of payment, price volatility does not favor it as a store of value, and because of the preceding points, it is not used as a unit of account.
+* Therefore, Bitcoin cannot currently be considered money.
+* Despite this, Bitcoin is in the process of becoming a store of value, due to a downward trend in its volatility that has led more and more economic agents to believe that its conversion to a store of value is possible in the near future and, in turn, has solidified its position.
+* Therefore, if the current trend is not affected by external shocks, Bitcoin is likely to become a store of value in the near future.
+* This would lead more economic agents to accept Bitcoin as a means of payment and thus open the way for the development of its function as a generalized means of payment.
+
