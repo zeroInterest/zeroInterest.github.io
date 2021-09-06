@@ -130,6 +130,10 @@ Finally, if Bitcoin's function as a medium of exchange were to develop, it would
 
 Therefore, we can say that Bitcoin is currently in the process of becoming a store of value. That said, whether such a function is widely recognized depends on the maintenance of the trend in which it is now present: further decrease in its downward volatility without giving up its current popularity. Moreover, the development of other functions as a generalized medium of exchange and unit of account is still a long way off and is conditional on the soundness of the development of the store of value function.
 
+Figure 2 summarizes the process by which Bitcoin could obtain the functions of money and thus become money. Take into account that this figure is an abstraction and does not consider various factors that could influence this process, such as external shocks that could have adverse effects and the time that each transition could take.
+
+{% include image.html url="/assets/img/money-and-the-ascent-of-bitcoin/BitcoinProcess.jpg" description="Figure 2. Bitcoin Monetization Process" %}{: class="invertImage"}
+
 Recently, Taleb has argued that Bitcoin can never be a store of value, since its fundamental value is 0. In the next subsection we address this criticism.
 
 ## From Irrationality to Fundamental Value: The importance of becoming a store of value 
