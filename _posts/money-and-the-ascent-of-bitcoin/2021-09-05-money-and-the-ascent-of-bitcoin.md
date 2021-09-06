@@ -49,6 +49,7 @@ Nevertheless, for money to fulfill the above functions, it must meet various cha
 4. **Durability:** It must remain intact over time without physically degrading or disappearing, therefore favoring its hoarding.
 
 ## Types of Money
+This subsection is merely for informational purposes and is not relevant for the understanding of the later sections of the post. Readers who wish to do so may omit it.
 
 Throughout history, money has taken many forms. Although today fiat money is the norm, commodity money characterized much of earlier history. 
 
