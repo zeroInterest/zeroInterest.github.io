@@ -144,11 +144,13 @@ To argue this, Taleb relies on the premise that the fundamental value of any ass
 
 Therefore, as bitcoin does not generate cash flows, i.e., the mere fact of owning bitcoin as such does not result in monetary payments, meaning that the value of bitcoin only depends on its terminal value.
 
-But, according to Taleb, Bitcoin is a technology. Therefore, Bitcoin, like any other technology, will eventually be replaced by another. As a result, its terminal value will be 0. Consequently, Taleb argues that since its fundamental value is 0, Bitcoin will not become money.
+Additionally, according to Taleb, Bitcoin is a technology. Therefore, Bitcoin, like any other technology, will eventually be replaced by another. As a result, its terminal value will be 0. Consequently, Taleb argues that since its fundamental value is 0, Bitcoin will not become money.
 
-Nevertheless, in this argument, Taleb avoids two important points: (1) humans are not completely rational, and (2) Bitcoin is in the process of becoming a store of value as we saw in the previous subsection. Taleb's argument may have been valid at earlier stages in the development of Bitcoin's store of value function. Hence, an origin irrationality, i. e., the extensive acquisition of bitcoin despite a fundamental value equal to 0, has caused bitcoin to develop its function as a store of value.
+Nevertheless, in this argument, Taleb avoids two important points: (1) humans are not completely rational, and (2) Bitcoin is in the process of becoming a store of value as we saw in the previous subsection. Taleb may be right, bitcoin may not yet be a store of value as such. But, this does not imply that it cannot become one, as we have seen in the previous subsection.
 
-Such a fact is critical since assets that act as a store of value provide the holder with a service: the transfer of value in space and time. Consequently, this implies that the expected flows of bitcoin are not zero, but the implicit value of this service. Therefore, Bitcoin's fundamental value should be greater than 0.
+The reason behind this is irrationality in the early stage of Bitcoin, at that time it could be valid to say that Bitcoin had a value of 0. Nevertheless, multiple economic agents were attracted by it, which, as we have seen in the previous section, led to the start of the development of Bitcoin's store of value function.
+
+Such a fact is critical since assets that act as a store of value provide the holder with a service: the transfer of value in space and time. Consequently, as Bitcoin is in the process of developing its store-of-value function, this implies that the expected flows of bitcoin are not zero, but the implicit value of this service. Therefore, Bitcoin's fundamental value should be greater than 0.
 
 
 # Key Takeaways
