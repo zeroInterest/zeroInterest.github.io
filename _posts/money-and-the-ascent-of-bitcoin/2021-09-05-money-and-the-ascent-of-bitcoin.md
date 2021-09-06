@@ -99,11 +99,18 @@ Moreover, rewards given to miners are not always the same, yet they decline geom
 
 ## Is Bitcoin money?
 
-Before we can say whether bitcoin is money or not, we must first analyze whether it fulfills the functions that we previously stated that money must accomplish: (1) generally accepted medium of exchange, (2) store of value, and (3) unit of account.
+Bitcoin meets all the necessary characteristics required to fulfill the functions that we previously stated that money must accomplish. As a digital asset, it is extensively portable, being its transferability and accumulation easy. In addition, it is deeply divisible: one bitcoin can be divided into 100 million units, commonly known as satoshis.  Likewise, the digital nature of bitcoins makes them uniform and durable.
 
-As of today, Bitcoin is not a generalized medium of exchange. We cannot go to the bakery next to our house and buy bread with it, nor can we go to a car dealership and buy a car with it. Moreover,  Bitcoin has high price volatility, which neither favors it as a store of value nor as a unit of account. 
+However, the fact that it meets the necessary characteristics to fulfill the functions of money does not imply that it fulfills them. Consequently, before we can say whether bitcoin is money or not, we must first analyze whether it fulfills these functions: (1) generally accepted medium of exchange, (2) store of value, and (3) unit of account.
 
-Thus, we can say that bitcoin currently cannot be considered money. However, bitcoin meets all the necessary characteristics required to fulfill these functions. As a digital asset, it is extensively portable, being its transferability and accumulation easy. In addition, it is deeply divisible: one bitcoin can be divided into 100 million units, commonly known as satoshis.  Likewise, the digital nature of bitcoins makes them uniform and durable. And that leads to a more complex question: is bitcoin in the process of becoming money?
+1. **Generally accepted medium of exchange**: As of today, Bitcoin is not a generalized medium of exchange. We cannot go to the bakery next to our house and buy bread with it, nor can we go to a car dealership and buy a car with it. 
+2. **Store of value:** Bitcoin has historically had severe price volatility, which is not favoring its function as a store of value.
+3. **Unit of account:** The limited adoption of bitcoin as a means of payment and its price volatility do not foster its use as a unit of account.
+
+Thus, we can say that **bitcoin currently cannot be considered money**. 
+Notwithstanding this, given the attractive properties of bitcoin, we might ask ourselves a slightly more complex question: is bitcoin in the process of becoming money?
+
+## Is bitcoin in the process of becoming money?
 
 In the beginning, Bitcoin had a highly volatile price, as it was a new, virtually unknown asset that very few people owned. Nevertheless, Bitcoin was an asset with quite appealing monetary properties, coupled with a decentralized scheme and a finite money supply.
 
