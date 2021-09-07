@@ -8,10 +8,7 @@ tags: economics
 
 This post aims to answer the commonly asked question of whether bitcoin is money or not? 
 To do so, we first provide a basic understanding of money: what money is, its importance, the process by which a good becomes money, the necessary characteristics for it to do so, and the main types of money that have historically existed. 
-
-Afterward, we briefly describe Bitcoin and proceed to answer the core question of this post on whether it can be considered money or not. Concluding that Bitcoin cannot currently be considered money. This raises a related question that we also consider in this post: is bitcoin in the process of becoming money? In which we conclude that Bitcoin is currently in the process of developing its store of value function and that the development of other functions as a generalized medium of exchange and unit of account is still a long way off and is conditional on the soundness of the development of the store of value function.
-
-Finally, given such conclusions, this post discusses why our claim that bitcoin is in the process of developing its store of value function differs from Nassim Taleb's argument that bitcoin cannot be a store of value. Arguing that this is due to an irrationality of origin, which has enabled the development of such a function.
+Afterwards, we briefly describe Bitcoin and proceed to answer the core question of this post on whether it can be considered money or not.
 
 # Exchange and Money
 
