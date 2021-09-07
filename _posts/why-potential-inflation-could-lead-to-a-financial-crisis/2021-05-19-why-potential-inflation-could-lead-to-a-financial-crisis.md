@@ -20,7 +20,7 @@ Moreover, these economic disturbances led governments to act severely. Keynesian
 
 ## Stocks as the only attractive investment vehicle
 
-Such a long period of low interest rates inflated stock prices. Figure 3, shows how cyclically adjusted S&P 500 price-to-earnings ratio has been rising during the last decade, being quite high in comparison to other periods of time (specially before the dot-com bubble). Stock prices started trading at a premium, because there were no attractive alternative investments, this channelled much of the liquidity into equities (bonds with almost no interest or even negative interests were not an attractive investment anymore). Moreover, this low interest rate setting has prompted greater investor leverage, due to its low cost. Hence, low interest rates justify high stock prices, since stocks are highly attractive relative to bonds.
+Such a long period of low interest rates inflated stock prices. Figure 3, shows how cyclically adjusted S&P 500 price-to-earnings ratio has been rising during the last decade, being quite high in comparison to other periods of time (specially before the dot-com bubble). Stock prices started trading at a premium, because there were no attractive alternative investments, this channelled much of the liquidity into equities (bonds with almost no interest or even negative interests were not an attractive investment anymore). Moreover, this low interest rate setting has prompted greater investor leverage, due to its low cost. Hence, low interest rates justify high stock prices, since stocks are highly attractive relative to bonds and debt is stimulated due to its reduced cost.
 
 {% include image.html url="/assets/img/why-potential-inflation-could-lead-to-a-financial-crisis/9al89cizwuy61.png" description="Figure 3. Cyclically adjusted S&P 500 price-to-earnings rations" %}{: class="invertImage"}
 
@@ -48,7 +48,7 @@ The appearance of inflation means that interest rates should rise. Something tha
 
 >**“It may be that interest rates will have to rise somewhat to make sure that our economy doesn’t overheat”**
 
-But what would happen if inflation persists and interest rates have to be risen? Remember that I previously said that stocks are trading at a premium due to the lack of attractive alternative investments. This would no longer be true and this premium would no longer be a thing. And, thus, we should expect a decrease in the stock price.
+But what would happen if inflation persists and interest rates have to be risen? Remember that I previously said that stocks are trading at a premium due to the lack of attractive alternative investments. This would no longer be true and this premium would no longer be a thing. In addition, an increase in interest rates would reduce the attractiveness of leverage, thereby encouraging investor's deleverage. And, thus, we should expect a decrease in the stock price.
 
 ## The market can not be timed
 
@@ -59,7 +59,7 @@ Even with all these indicators, it is difficult to say whether this will happen 
 ## Summary
 
 * The first decade of the 2000s was characterized by two economic crisis, which defined an economy with very low interest rates
-* Low interest rates increased stock market prices, since there were no attractive alternative investments and, thus, stock markets traded at a premium.
+* Low interest rates increased stock market prices, since there were no attractive alternative investments and leverage was cheap. Thus, stock markets traded at a premium.
 * The Covid crisis led to a massive injection of money into the economy.
 * This money injection is a double-edged sword which may have brought an exuberance illusion awakening a ghost that has been dormant in recent years, inflation.
 * The emergence of inflation would imply an increase in interest rates.
