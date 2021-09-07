@@ -9,7 +9,9 @@ tags: economics
 This post aims to answer the commonly asked question of whether bitcoin is money or not? 
 To do so, we first provide a basic understanding of money: what money is, its importance, the process by which a good becomes money, the necessary characteristics for it to do so, and the main types of money that have historically existed. 
 
-Afterward, we briefly describe Bitcoin and proceed to answer the core question of this post on whether it can be considered money or not. 
+Afterward, we briefly describe Bitcoin and proceed to answer the core question of this post on whether it can be considered money or not. Concluding that Bitcoin cannot currently be considered money. This raises a new crucial question that we also consider in this post: is bitcoin in the process of becoming money? In which we conclude that Bitcoin is currently in the process of becoming a store of value and that the development of other functions as a generalized medium of exchange and unit of account is still a long way off and is conditional on the soundness of the development of the store of value function.
+
+Finally, given such conclusions, this post discusses why our claim that bitcoin is in the process of developing its store of value function differs from Nassim Taleb's argument that bitcoin cannot be a store of value. Arguing that this is due to an irrationality of origin, which has enabled the development of such a function.
 
 # Exchange and Money
 
@@ -136,7 +138,7 @@ Figure 2 summarizes the process by which Bitcoin could obtain the functions of m
 
 Recently, Taleb has argued that Bitcoin can never be a store of value, since its fundamental value is 0. In the next subsection we address this criticism.
 
-## From Irrationality to Fundamental Value: The importance of becoming a store of value 
+## Against Taleb's argument of Bitcoin's impossibility to become a store of value 
 
 In the summer of 2021, Nassim Taleb published a short article entitled [Bitcoin, currencies, and fragility](https://www.tandfonline.com/doi/full/10.1080/14697688.2021.1952702), in which one of his arguments is that the value of Bitcoin is exactly 0 and, therefore, Bitcoin cannot be a store of value.  
 
@@ -148,10 +150,11 @@ Additionally, according to Taleb, Bitcoin is a technology. Therefore, Bitcoin, l
 
 Nevertheless, in this argument, Taleb avoids two important points: (1) humans are not completely rational, and (2) Bitcoin is in the process of becoming a store of value as we saw in the previous subsection. Taleb may be right, bitcoin may not yet be a store of value as such. But, this does not imply that it cannot become one, as we have seen in the previous subsection.
 
-The reason behind this is irrationality in the early stage of Bitcoin, at that time it could be valid to say that Bitcoin had a value of 0. Nevertheless, multiple economic agents were attracted by it, which, as we have seen in the previous section, led to the start of the development of Bitcoin's store of value function.
+The reason behind this is irrationality in the early stages of Bitcoin, at that time it could be valid to say that Bitcoin had a value of 0. Nevertheless, multiple economic agents were attracted by it, which, as we have seen in the previous section, led to the start of the development of Bitcoin's store of value function. As a result, many economic agents already consider Bitcoin as a store of value, while others expect it to become one in the near future.
 
-Such a fact is critical since assets that act as a store of value provide the holder with a service: the transfer of value in space and time. Consequently, as Bitcoin is in the process of developing its store-of-value function, this implies that the expected flows of bitcoin are not zero, but the implicit value of this service. Therefore, Bitcoin's fundamental value should be greater than 0.
+Such a fact is critical since assets that act as a store of value provide the holder with a service: the transfer of value in space and time. Consequently, as Bitcoin is in the process of developing its store-of-value function, this implies that the expected flows of bitcoin are no longer zero, but the implicit value of this service. Therefore, Bitcoin's fundamental value should be greater than 0.
 
+Therefore, in the case of Bitcoin, we face an instance in which a collective irrationality has endowed this asset with a value that a priori it should not have. Nevertheless, as part of this process, the store of value property has begun to develop, which justifies that this asset has value, and, at the same time, this value allows it to act as a store of value.
 
 # Key Takeaways
 
@@ -165,6 +168,10 @@ Such a fact is critical since assets that act as a store of value provide the ho
 * Bitcoin does not currently serve any of the functions that money should have: it is not used as a general means of payment, price volatility does not favor it as a store of value, and because of the preceding points, it is not used as a unit of account.
 * Therefore, Bitcoin cannot currently be considered money.
 * Despite this, Bitcoin is in the process of becoming a store of value, due to a downward trend in its volatility that has led more and more economic agents to believe that its conversion to a store of value is possible in the near future and, in turn, has solidified its position.
-* Therefore, if the current trend is not affected by external shocks, Bitcoin is likely to become a store of value in the near future.
+* The beginning of the development of Bitcoin as a store of value arises from an irrationality of origin.
+* If the current trend is not affected by external shocks, Bitcoin is likely to become a store of value in the near future.
 * This would lead more economic agents to accept Bitcoin as a means of payment and thus open the way for the development of its function as a generalized means of payment.
 
+# Code
+
+You can find the code used to compute Bitcoin's downside volatility and create Figure 1 [here](https://github.com/zeroInterest/zeroInterest.github.io/blob/master/_posts/money-and-the-ascent-of-bitcoin/bitcoin-downside-risk.R).
