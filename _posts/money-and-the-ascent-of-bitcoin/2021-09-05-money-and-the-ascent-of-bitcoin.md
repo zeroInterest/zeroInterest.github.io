@@ -8,6 +8,7 @@ tags: economics
 
 This post aims to answer the commonly asked question of whether bitcoin is money or not? 
 To do so, we first provide a basic understanding of money: what money is, its importance, the process by which a good becomes money, the necessary characteristics for it to do so, and the main types of money that have historically existed. 
+
 Afterwards, we briefly describe Bitcoin and proceed to answer the core question of this post on whether it can be considered money or not.
 
 # Exchange and Money
